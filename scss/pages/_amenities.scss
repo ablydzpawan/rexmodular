@@ -1,0 +1,249 @@
+// Amenities
+.amenities-heading {
+  .section-desc {
+    font-size: clamp(1rem, 1.5rem, 2rem);
+
+    @include media-breakpoint-up(lg) {
+      max-width: 50%;
+    }
+  }
+}
+
+.bg-amenities {
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.amenities-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(auto, 70%) 1fr;
+  gap: 2rem;
+  padding: 0 5%;
+
+  @include media-breakpoint-up(lg) {
+    gap: 12rem;
+  }
+
+  &-start {}
+
+  &-end {}
+}
+
+.section-component {
+  padding: 0;
+  background-color: #000;
+  position: relative;
+  width: 100%;
+
+  @include media-breakpoint-up(lg) {
+    min-height: 100vh;
+  }
+}
+
+.corner-content {
+  background-color: #eae0d9;
+  color: #000;
+  position: static;
+  padding: 1rem;
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    max-width: 40rem;
+    background-color: transparent;
+    color: #fff;
+    padding: 6rem 5rem;
+  }
+
+  &-bg {
+    background-color: #eae0d9;
+    color: #000;
+  }
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .corner-icon {
+    display: none;
+    aspect-ratio: 1/1;
+    max-width: 2.5rem;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+      max-width: 4.5rem;
+    }
+  }
+
+  .corner-title {
+    font-weight: 400;
+    font-size: clamp(1rem, 2.692vw, 3.5rem);
+  }
+
+  .corner-desc {
+    text-wrap: balance;
+    font-weight: 300;
+
+    font-size: 1rem;
+    line-height: 1.4;
+
+    @include media-breakpoint-up(lg) {
+
+      font-size: 1.3rem;
+    }
+  }
+}
+
+.amenities-page-carousel {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+
+  &-item {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-size: 100%;
+
+    // min-height: 200px;
+    @include media-breakpoint-up(lg) {
+      min-height: 400px;
+      height: 100vh;
+    }
+
+    &::after {
+      @include media-breakpoint-up(lg) {
+        content: "";
+      }
+
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      opacity: 0.8;
+      background: transparent linear-gradient(247deg, #ffffff00 0%, #8e8e8e71 27%, #000000 100%) 0% 0% no-repeat padding-box;
+    }
+
+    &::before {
+      @include media-breakpoint-up(lg) {
+        content: "";
+      }
+
+      position: absolute;
+      z-index: 1;
+      inset: 0;
+      opacity: 0.8;
+      background: transparent linear-gradient(123deg, #ffffff00 0%, #8e8e8e00 26%, #000000 100%) 0% 0% no-repeat padding-box;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    border-radius: 0;
+    color: #fff;
+
+    @include media-breakpoint-up(lg) {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    &:after {
+      font-size: 2rem;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+.amenities-page-carousel-kids {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    @include media-breakpoint-up(lg) {
+      top: 15%;
+    }
+
+    z-index: 200;
+  }
+}
+
+.amenities-minimap-component {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 11;
+  position: fixed;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  width: 31rem;
+  height: 22rem;
+  opacity: 1;
+  visibility: hidden;
+  transition: opacity 500ms;
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  &.visible {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 500ms;
+  }
+
+  .minimap-svg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    // display: none;
+    transition: opacity 500ms;
+    opacity: 0;
+    visibility: hidden;
+
+    &.loaded {
+      //display: block;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 500ms;
+    }
+  }
+}
+
+.hotspot {
+  &-tooltip {
+    opacity: 0;
+    transition: opacity 500ms;
+    pointer-events: none;
+  }
+
+  &-dot {
+    cursor: pointer;
+    // opacity: 0;
+  }
+
+  &:hover {
+    .hotspot-tooltip {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    circle {
+      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+      fill: #ffcca8;
+    }
+  }
+}

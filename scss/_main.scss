@@ -1,0 +1,35 @@
+//Framework
+//@import "bootstrap/bootstrap";
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/containers";
+@import "bootstrap/grid";
+@import "bootstrap/utilities";
+
+//@import "vendors/jquery.fancybox.min";
+
+//themes
+@import "themes/variables";
+
+//layout
+@import "layout/header";
+@import "layout/offcanvas-menu";
+@import "layout/footer";
+
+//components
+@import "components/loader";
+//@import "components/custom-cursor";
+@import "components/hamburger";
+@import "components/button";
+@import "components/section";
+@import "components/scrollbar";
+@import "components/misc";
+@import "components/checkbox";
+
+//pages
+@import "pages/index";
+@import "pages/contact";
+
+//vendors
+@import "vendors/swiper.min.scss";

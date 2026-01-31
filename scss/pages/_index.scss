@@ -1,0 +1,339 @@
+[data-text-anim] {
+  visibility: hidden;
+}
+
+.duplicate-char {
+  position: absolute;
+  inset: 0;
+  transform: translateY(100%);
+}
+
+.preloader-mask,
+.preloader-progress-bar,
+.preloader-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100svh;
+  width: 100%;
+  pointer-events: none;
+}
+
+.preloader-mask {
+  z-index: 100;
+  background-color: #1C1917;
+  mask: linear-gradient(white, white), url('https://ik.imagekit.io/kg2nszxjp/ironstride-preloader/preloader-mask.svg') center/40% no-repeat;
+  mask-composite: subtract;
+}
+
+.preloader-progress-bar {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: #2D2925;
+}
+
+.preloader-bg {
+  background-color: #fff;
+  transform-origin: left;
+  transform: scaleX(0.2);
+}
+
+.preloader-logo {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  p {
+    margin: auto;
+    text-align: center;
+    mix-blend-mode: difference;
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 500;
+    line-height: 100%;
+  }
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 1;
+    background: transparent linear-gradient(180deg, #00000000 0%, #000000B3 100%) 0% 0% no-repeat padding-box;
+    height: 450px;
+    pointer-events: none;
+  }
+
+  &-inner {
+    height: inherit;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include media-breakpoint-up(lg) {
+      object-fit: inherit;
+      height: inherit;
+    }
+  }
+
+  .hero-img {
+    // height: inherit;
+  }
+
+  .hero-content {
+    color: #fff;
+    position: absolute;
+    z-index: 100;
+    top: 40%;
+    //width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex-shrink: inherit;
+    //text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      transform: translateY(-50%);
+      text-align: initial;
+      gap: 2rem;
+      top: 60%;
+    }
+
+    &-tag {
+      font-weight: 400;
+      //font-size: 3rem;
+      font-size: clamp(1rem, calc(0.5rem + 2.5vw), 3rem);
+
+      @include media-breakpoint-up(lg) {}
+    }
+
+    &-heading {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      line-height: 1;
+      text-wrap-style: balance;
+      // font-size: 6rem; 
+      font-size: clamp(1.25rem, calc(0.0625rem + 5.9375vw), 6rem);
+
+      @include media-breakpoint-up(lg) {
+        // font-size: clamp(3rem, 6vw, 9rem);
+      }
+    }
+
+    &-desc {
+      font-size: 1rem;
+      line-height: 1.5;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 1.25rem;
+      }
+    }
+
+    &-btn {
+      border: solid 2px #fff;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #fff;
+      background-color: transparent;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.88rem 2rem;
+      height: auto;
+      line-height: 1;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+    }
+  }
+
+  // inner pages
+  &-pages {
+    height: 55vh;
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      height: 75vh;
+    }
+
+    .hero-content {
+      @include media-breakpoint-up(lg) {
+        max-width: none;
+        margin: 0 auto;
+        text-align: inherit;
+      }
+    }
+
+
+
+    .hero-img {
+      object-fit: cover;
+      width: auto;
+      height: 100%;
+      transition: 2s ease;
+    }
+
+    .swiper-slide-active .hero-img {
+      transform: scale(1.2);
+    }
+  }
+
+  &-small {
+    height: 6rem;
+
+    @include media-breakpoint-up(lg) {
+      height: 8rem;
+    }
+
+    img {
+      @include media-breakpoint-down(md) {
+        height: inherit;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.bg-beighborhood {
+  // border-top: solid 1px #93331052;
+  // border-bottom: solid 1px #93331013;
+  background-position-x: center;
+  background-position-y: bottom;
+  background-size: 100%;
+  background-repeat: repeat-x;
+  //background-color: #eae0d9;
+  background-color: #f3eeeb;
+  animation: marquee 90s infinite linear;
+}
+
+img {
+  height: 100%;
+  width: auto;
+
+  object-fit: contain;
+}
+
+body:not(.no-js) .image-wrap {
+  transition: 1s ease-out;
+  transition-delay: 0.2s;
+  position: relative;
+  width: auto;
+  height: 80vh;
+  overflow: hidden;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  visibility: hidden;
+}
+
+body:not(.no-js) .image-wrap img {
+  transform: scale(1.3);
+  transition: 2s ease-out;
+}
+
+body:not(.no-js) .animating .image-wrap {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  visibility: visible;
+  transform: skewY(0);
+}
+
+body:not(.no-js) .animating img {
+  transform: scale(1);
+  transition: 4s ease-out;
+}
+
+body:not(.no-js) .fadeup {
+  opacity: 0;
+  transition: 0.4s ease-out;
+  transform: translateY(40px);
+}
+
+body:not(.no-js) .fading-up {
+  opacity: 1;
+  transition: 1s ease-out;
+  transform: translateY(0px);
+  transition-delay: 0.7s;
+}
+
+.bg-buildings {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  min-height: 800px;
+}
+
+//services
+.services {
+  background-color: #000;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin: 2rem 0;
+
+  &-item {
+    background-color: #fff;
+    display: flex;
+    gap: 1.5rem;
+    padding: 3rem 4rem;
+
+    &:nth-child(odd) {
+      padding-left: 0;
+    }
+
+    &:nth-child(even) {
+      padding-right: 0;
+    }
+  }
+
+  .icon {}
+
+  .data {
+    .h3 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #000;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #000;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+.bg-blue {
+  // background-color: #1177DD;
+  // padding-bottom: 0;
+}
+
+.bg-light-blue {
+  background-color: #ECF5FE;
+
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
