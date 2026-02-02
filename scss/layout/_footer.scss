@@ -10,6 +10,7 @@ $section-padding: clamp(2rem, 5vw, 10rem);
   // padding: $section-padding;
   &-logo {
     margin-left: auto;
+    margin-bottom: -4px;
 
     @include media-breakpoint-up(lg) {
       max-width: 450px;
@@ -22,8 +23,9 @@ $section-padding: clamp(2rem, 5vw, 10rem);
 
 
   &-top {
-    background-color: #1177DD !important;
-    color: #fff;
+    @include bg-brand;
+    background-color: $bg-brand !important;
+
     padding-bottom: 0 !important;
   }
 
@@ -31,182 +33,53 @@ $section-padding: clamp(2rem, 5vw, 10rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  &-bottom {
-    padding: 0.5rem 0;
-
-    p {
-      color: #000;
-      font-size: 1.125rem;
-      padding: 0.5rem 0;
-
-    }
-
-    .address {
-      text-align: start;
-    }
-
-    .short-links {
-      text-align: center;
-
-      a {
-        &:hover {
-          color: #000;
-        }
-      }
-    }
-
-    .copyright {
-      text-align: end;
+    &-start {
+      max-width: 50%;
     }
   }
+
+
 }
 
+.footer-bottom {
+  padding: 0.5rem 0;
 
-
-.footer-col-main {
-  @include media-breakpoint-up(lg) {
-    border-left: solid 1px lighten($brand-color, 48);
-    border-right: solid 1px lighten($brand-color, 48);
-  }
-
-  &-head {
+  &-inner {
     display: flex;
-    flex-direction: column;
-    gap: 3rem;
-
-    @include media-breakpoint-up(lg) {
-      padding: 0 4.375rem;
-    }
-  }
-
-  &-body {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-
-    padding-bottom: 2rem;
-
-    @include media-breakpoint-up(lg) {
-      padding: 0 4.375rem;
-    }
-  }
-}
-
-.footer-contact {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  &-item {
-    font-size: 1rem;
-    display: flex;
-    gap: 1rem;
-  }
-}
-
-.social-contact {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-
-  &-item {
-    font-size: 1rem;
-    display: flex;
-    gap: 1rem;
-  }
-
-  &-link {
-    background-color: transparent;
-    border: solid 1px $brand-color;
-    width: 2.75rem;
-    height: 2.75rem;
-    aspect-ratio: 1/1;
-    color: $brand-color;
-    border-radius: 50%;
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    @include btn-hover;
-
-    &:is(:hover, :focus, :active, .active) {
-      // @include bg-brand;
-    }
-  }
-}
-
-.footer-nav {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  flex-direction: column;
-
-  @include media-breakpoint-up(lg) {
-    flex-direction: row;
+    gap: 1rem;
   }
 
-  &-link {
-    font-size: 1rem;
-    color: $txt-body;
-    @include underline;
+  &-item {
+    font-weight: 300;
   }
-}
-
-.footer-divider {
-  background-color: lighten($brand-color, 48);
-  margin: 1rem 0;
-  height: 1px;
-  width: 100%;
-
-  @include media-breakpoint-up(lg) {
-    margin: 3rem 0;
-  }
-}
-
-.footer-brands {
-  display: flex;
-  align-items: center;
-  flex-flow: row wrap;
-  gap: 3rem;
-
-  @include media-breakpoint-up(lg) {
-    flex-flow: row;
-  }
-
-  img {
-    max-width: 80px;
-
-    @include media-breakpoint-up(lg) {
-      max-width: 100%;
-    }
-  }
-}
-
-.copright {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding-bottom: 2rem;
 
   p {
-    color: $txt-body;
-    font-size: 1rem;
+    color: #000;
+    font-size: 1.125rem;
+    padding: 0.5rem 0;
+
+  }
+
+  .address {
+    text-align: start;
+  }
+
+  .short-links {
+    text-align: center;
 
     a {
       @include underline;
+
+      &:hover {
+        color: #000;
+      }
     }
   }
-}
 
-.footer-shape {
-  display: none;
-
-  @include media-breakpoint-up(lg) {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+  .copyright {
+    text-align: end;
   }
 }
