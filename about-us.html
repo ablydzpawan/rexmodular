@@ -43,17 +43,19 @@
 
             <main class="main" id="main">
                 <section class="section section-intru">
-                    <div class="intru-text">
-                        <div class="section-text">
-                            <sup class="sub-title section-text-super" data-text-anim="bodyAnimation">ABOUT US</sup>
-                            <h2 class="sub-title section-text-h2" data-text-anim="bodyAnimation">Trusted Energy
-                                Partner for Leading Real Estate Firms
-                            </h2>
-                            <p class="sub-title section-text-desc" data-text-anim="bodyAnimation">We are a forward
-                                thinking team of award winning professionals with over 30 years experience in
-                                construction and
-                                residential developments who share a passion for building exciting and beautiful
-                                homes. </p>
+                    <div class="section-intru-start">
+                        <div class="intru-text">
+                            <div class="section-text">
+                                <sup class="sub-title section-text-super" data-text-anim="bodyAnimation">ABOUT US</sup>
+                                <h2 class="sub-title section-text-h2" data-text-anim="bodyAnimation">Trusted Energy
+                                    Partner for Leading Real Estate Firms
+                                </h2>
+                                <p class="sub-title section-text-desc" data-text-anim="bodyAnimation">We are a forward
+                                    thinking team of award winning professionals with over 30 years experience in
+                                    construction and
+                                    residential developments who share a passion for building exciting and beautiful
+                                    homes. </p>
+                            </div>
                         </div>
                     </div>
                     <div class="section-intru-img"><img src="images/about-us.png" alt=""> </div>
@@ -108,11 +110,14 @@
                             </div>
                         </header>
                         <div class="section-body">
-                            <video loop="" autoplay="" muted="" playsinline="" preload="auto" class="about-video"
-                                poster="/images/videos/about_video_PosterImage.png">
-                                <source src="images/videos/about_video.mp4" type="video/mp4">
-                            </video>
+                            <div class="about-video-wrpper"> <video loop="" autoplay="" muted="" playsinline=""
+                                    preload="auto" class="about-video"
+                                    poster="/images/videos/about_video_PosterImage.png">
+                                    <source src="images/videos/about_video.mp4" type="video/mp4">
+                                </video>
+                            </div>
                         </div>
+
 
                     </div>
                 </section>
@@ -127,8 +132,8 @@
                             </header>
                             <div class="values">
                                 <div class="values-item">
-                                    <div class="count">01</div>
-                                    <div class="data">
+                                    <div class="count data">01</div>
+                                    <div class="values-data">
                                         <h3 class="h3">Experience</h3>
                                         <p class="desc">We are one of the most seasoned real estate investment teams in
                                             the Western United States, investing across multiple
@@ -139,8 +144,8 @@
                                     </div>
                                 </div>
                                 <div class="values-item">
-                                    <div class="count">02</div>
-                                    <div class="data">
+                                    <div class="count data">02</div>
+                                    <div class="values-data">
                                         <h3 class="h3">Execuation</h3>
                                         <p class="desc">We are one of the most seasoned real estate investment teams in
                                             the Western United States, investing across multiple
@@ -151,8 +156,8 @@
                                     </div>
                                 </div>
                                 <div class="values-item">
-                                    <div class="count">03</div>
-                                    <div class="data">
+                                    <div class="count data">03</div>
+                                    <div class="values-data">
                                         <h3 class="h3">Innovation</h3>
                                         <p class="desc">We are one of the most seasoned real estate investment teams in
                                             the Western United States, investing across multiple
@@ -283,7 +288,7 @@
                             </div>
                             <div class="footer-bottom-item">
                                 <p class="short-links"> <a href="about-us.html">About Us</a> | <a
-                                        href="contact-us.html">About Us</a>
+                                        href="contact-us.html">Contact Us</a>
                                 </p>
                             </div>
                             <div class="footer-bottom-item">
@@ -294,6 +299,22 @@
                     </div>
                 </section>
             </footer>
+            <div class="back-top">
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="4" fill="none">
+                    </circle>
+                    <circle cx="25" cy="25" r="22" stroke="#fff" stroke-width="4" fill="none"
+                        stroke-dasharray="138.23007675795088" stroke-dashoffset="136.11792691661475"
+                        stroke-linecap="round"
+                        style="transition: stroke-dashoffset 0.3s; transform: rotate(-90deg); transform-origin: 50% 50%;">
+                    </circle>
+                </svg>
+                <svg class="up-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 20V4M12 4L6 10M12 4L18 10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
         </div>
 
         <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample"
@@ -311,7 +332,7 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="menu">
-                    <li><a class="menu-link" href="#">Home</a></li>
+                    <li><a class="menu-link" href="index.html">Home</a></li>
                     <li><a class="menu-link" href="about-us.html">About Us</a></li>
                     <li><a class="menu-link" href="our-mid-rise-tower-system.html">Our Mid-Rise Tower System</a></li>
                     <li><a class="menu-link" href="contact-us.html">Contact Us</a></li>

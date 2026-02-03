@@ -10,6 +10,9 @@
 
 //@import "vendors/jquery.fancybox.min";
 
+//vendors
+@import "vendors/swiper.min.scss";
+
 //themes
 @import "themes/variables";
 
@@ -32,6 +35,3 @@
 //pages
 @import "pages/index";
 @import "pages/contact";
-
-//vendors
-@import "vendors/swiper.min.scss";

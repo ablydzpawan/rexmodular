@@ -259,3 +259,50 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+
+const items = document.querySelectorAll(".data");
+
+gsap.from(items, {
+  textContent: 0,
+  duration: 4,
+  ease: Power1.easeIn,
+  snap: { textContent: 1 },
+  stagger: 1,
+  
+});
+
+
+/**/
+ // SVG circle animation
+const backTop = document.querySelector(".back-top");
+const progressCircle = document.querySelector(
+  ".back-top svg circle:nth-child(2)"
+);
+const radius = 22;
+const circumference = 2 * Math.PI * radius;
+progressCircle.style.strokeDasharray = circumference;
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = scrollTop / docHeight;
+  const dashOffset = circumference * (1 - scrollPercent);
+  // SVG progress animation
+  progressCircle.style.strokeDashoffset = dashOffset;
+  // Toggle back-top visibility
+  if (scrollTop > 50) {
+    backTop.classList.add("back-top-show");
+  } else {
+    backTop.classList.remove("back-top-show");
+  }
+});
+
+// Click to back to top
+backTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+

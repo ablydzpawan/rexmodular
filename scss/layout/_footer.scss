@@ -37,6 +37,14 @@ $section-padding: clamp(2rem, 5vw, 10rem);
     &-start {
       max-width: 50%;
     }
+
+    .btn {
+      line-height: 1.4;
+      height: auto;
+      gap: 1.5rem;
+      font-size: 1.88rem;
+      padding: 0.5rem 2rem;
+    }
   }
 
 
