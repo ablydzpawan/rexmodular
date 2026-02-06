@@ -11,9 +11,11 @@ $section-padding: clamp(2rem, 5vw, 10rem);
   &-logo {
     margin-left: auto;
     margin-bottom: -4px;
+    display: none;
 
     @include media-breakpoint-up(lg) {
       max-width: 450px;
+      display: block;
 
       img {
         max-width: 100%;
@@ -21,21 +23,29 @@ $section-padding: clamp(2rem, 5vw, 10rem);
     }
   }
 
-
   &-top {
     @include bg-brand;
     background-color: $bg-brand !important;
 
-    padding-bottom: 0 !important;
+    @include media-breakpoint-up(lg) {
+      padding-bottom: 0;
+    }
   }
 
   .lets-connect {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
 
     &-start {
-      max-width: 50%;
+      @include media-breakpoint-up(lg) {
+        max-width: 50%;
+      }
     }
 
     .btn {
@@ -57,7 +67,13 @@ $section-padding: clamp(2rem, 5vw, 10rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      gap: 1rem;
+    }
   }
 
   &-item {
@@ -67,7 +83,11 @@ $section-padding: clamp(2rem, 5vw, 10rem);
   p {
     color: #000;
     font-size: 1.125rem;
-    padding: 0.5rem 0;
+    padding: 0.125rem 0;
+
+    @include media-breakpoint-up(lg) {
+      padding: 0.5rem 0;
+    }
 
   }
 

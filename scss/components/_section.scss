@@ -6,6 +6,7 @@
   padding: $section-padding 0;
 
   //height: 100vh;
+  //min-height: 100svh;
   @include media-breakpoint-down(sm) {
     padding: calc(1rem + 3vw) 0;
   }
