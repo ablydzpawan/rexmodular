@@ -97,7 +97,7 @@ function preloaderAnimation() {
 			duration: 2.8
 		})
 		.to(".preloader-mask", {
-			scale: 3,
+			scale: 4,
 			duration: 0.9,
 			ease: "expoScale(0.5,7,power1.in)"
 		})
