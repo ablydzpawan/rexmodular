@@ -1,12 +1,12 @@
 .contact-us {
     display: flex;
     //align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 5rem;
 
     &-form {
-        flex: 0 0 70%;
-        max-width: 70%;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
 
     &-data {

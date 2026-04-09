@@ -322,7 +322,22 @@ $input-border-focus: $brand-color;
 
 .thanks-msg {
   display: block;
-  font-style: italic;
-  margin: 10px auto;
+  margin: 2rem auto;
   text-align: center;
+  font-size: 1.125rem;
+
+  .dotlottie-player {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
 }
