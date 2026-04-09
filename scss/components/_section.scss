@@ -90,6 +90,7 @@
       line-height: 1.6;
       text-wrap-style: balance;
       margin-bottom: 2rem;
+      text-align: justify;
 
       // font-weight: $font-weight-regular;
       @include media-breakpoint-up(lg) {
@@ -98,13 +99,6 @@
       }
     }
   }
-
-
-
-
-
-
-
 
   .small-desc {
     line-height: 1.5;
@@ -126,4 +120,8 @@
     text-align: center;
     margin-top: 1.5rem;
   }
+}
+
+.bg-gray-lightest {
+  background-color: #f2f2f2;
 }
