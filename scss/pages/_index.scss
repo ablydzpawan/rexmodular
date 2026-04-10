@@ -500,9 +500,13 @@ body:not(.no-js) .fading-up {
     visibility: visible;
 
     .offcanvas-body {
-
       transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       opacity: 1;
+      padding: 5rem 2rem;
+
+      @include media-breakpoint-up(lg) {
+        padding: 5rem 3.375rem;
+      }
     }
   }
 
@@ -536,12 +540,17 @@ body:not(.no-js) .fading-up {
   &-link {
     display: block;
     padding: 1rem 0;
+    padding-inline-end: 2.5rem;
     // margin: 1rem 0;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 300;
     line-height: 1.1;
     opacity: 1;
     position: relative;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 3rem;
+    }
 
     &:after {
       transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
