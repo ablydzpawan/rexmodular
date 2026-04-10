@@ -626,12 +626,19 @@ body:not(.no-js) .fading-up {
   gap: 2rem;
   align-items: center;
 
+
   @include media-breakpoint-up(lg) {
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
     max-width: 620px;
+
+  }
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+    //max-width: 300px;
+    padding: 0 2rem;
   }
 
   &-img {}

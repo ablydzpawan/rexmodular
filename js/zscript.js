@@ -87,7 +87,7 @@ function animateText(el) {
 	});
 }
 
-function preloaderAnimation() {
+function preloaderAnimation() {  
 	let tl = gsap.timeline();
 	tl
 		.call(animateText, [".logo-text"])
@@ -96,8 +96,8 @@ function preloaderAnimation() {
 			ease: "stutterEase",
 			duration: 2.8
 		})
-		.to(".preloader-mask", {
-			scale: 4,
+		.to(".preloader-mask", { 
+			scale: 8,
 			duration: 0.9,
 			ease: "expoScale(0.5,7,power1.in)"
 		})
