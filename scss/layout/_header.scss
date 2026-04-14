@@ -4,6 +4,7 @@ $header-height: 116px;
   background-color: transparent;
   color: #fff;
   position: absolute;
+  //height: 100px;
   height: 100px;
   z-index: 100;
   width: 100%;
@@ -19,7 +20,7 @@ $header-height: 116px;
   visibility: hidden;
   animation-delay: 1.5s;
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     height: 70px;
   }
 
