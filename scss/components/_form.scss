@@ -326,6 +326,12 @@ $input-border-focus: $brand-color;
   text-align: center;
   font-size: 1.125rem;
 
+  &-img {
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    max-width: 250px;
+  }
+
   .dotlottie-player {
     margin: 0 auto;
     display: block;

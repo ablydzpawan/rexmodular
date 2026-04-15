@@ -1069,13 +1069,15 @@ body:not(.no-js) .fading-up {
 }
 
 .project-slider {
-  &-item {}
+  &-item {
+    background-color: #fff;
+  }
 
   &-img {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid 1px #E1E1E1;
+    //border: solid 1px #E1E1E1;
   }
 
 
@@ -1096,10 +1098,11 @@ body:not(.no-js) .fading-up {
     width: 2rem;
     height: 2rem;
     aspect-ratio: 1/1;
+    padding: 10px;
 
     @include media-breakpoint-up(lg) {
-      width: 4.375rem;
-      height: 4.375rem;
+      width: 3rem;
+      height: 3rem;
     }
 
     &:hover {
@@ -1128,6 +1131,11 @@ body:not(.no-js) .fading-up {
     @include media-breakpoint-up(lg) {
       right: 2.5rem;
     }
+  }
+
+  .swiper-button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
 
