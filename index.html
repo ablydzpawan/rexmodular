@@ -359,14 +359,22 @@
       </div>
     </div>
 
-    <script src='https://unpkg.com/gsap@3/dist/gsap.min.js'></script>
-    <script src='https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js'></script>
-    <script src='https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js'></script>
-    <script src='https://unpkg.com/gsap@3/dist/CustomEase.min.js'></script>
-    <script src='https://unpkg.com/gsap@3/dist/SplitText.min.js'></script>
-    <script src='./js/bootstrap.js'></script>
+    <script src='./js/j1gsap.min.js'></script>
+    <script src='./js/j2ScrollTrigger.min.js'></script>
+    <script src='./js/j3lenis.min.js'></script>
+    <script src='./js/j4CustomEase.min.js'></script>
+    <script src='./js/j5SplitText.min.js'></script>
+    <script src='./js/j6bootstrap.js'></script>
+    <script src="./js/j7zscript.js"></script>
     <!-- <script src="./js/min/bundle.js"></script> -->
-    <script src="./js/zscript.js"></script>
+    <script>
+      window.addEventListener("load", () => {
+        const introTimeline = gsap.timeline();
+        const preloaderTl = preloaderAnimation();
+        const heroTl = heroAnimation();
+        introTimeline.add(preloaderTl).add(heroTl, "-=2.4");
+      });
+    </script>
 
   </body>
 

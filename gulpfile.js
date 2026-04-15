@@ -6,6 +6,7 @@ import sourcemaps from "gulp-sourcemaps";
 import gulpSass from "gulp-sass";
 import autoPrefixer from "gulp-autoprefixer";
 import minify from "gulp-minify";
+import tap from 'gulp-tap';
 import * as sass from "sass";
 import concat from "gulp-concat";
 const scss = gulpSass(sass);
@@ -24,6 +25,7 @@ function css() {
 // minifyJs
 function minifyJs() {
   return src("js/*.js", { allowEmpty: true })
+  .pipe(tap(file => console.log(file.path)))  
     .pipe(minify({ noSource: true }))
     .pipe(concat("bundle.js"))
     .pipe(dest("js/min"));

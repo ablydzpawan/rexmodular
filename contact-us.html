@@ -38,13 +38,13 @@
                     </div>
                 </div>
             </header>
-            <div class="preloader-progress-bar">
+            <!-- <div class="preloader-progress-bar">
                 <div class="preloader-bg"></div>
                 <div class="preloader-logo">
                     <p class="logo-text" data-text-anim="logoAnimation">RexModular</p>
                 </div>
             </div>
-            <div class="preloader-mask"></div>
+            <div class="preloader-mask"></div> -->
 
             <main class="main" id="main">
                 <section class="section section-intru">
@@ -67,7 +67,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="section-intru-img"><img src="images/contact-us.webp" alt=""> </div>
+                    <div class="section-intru-img">
+                        <div class="reveal">
+                            <div class="image-wrap"> <img src="images/contact-us.webp" alt=""></div>
+                        </div>
+
+
+                    </div>
                 </section>
                 <section class="section bg-light-blue">
                     <div class="container">
@@ -176,14 +182,21 @@
             </div>
         </div>
 
-        <script src='./js/gsap.min.js'></script>
+        <!-- <script src='./js/gsap.min.js'></script>
         <script src='./js/ScrollTrigger.min.js'></script>
         <script src='./js/lenis.min.js'></script>
         <script src='./js/CustomEase.min.js'></script>
         <script src='./js/SplitText.min.js'></script>
         <script src='./js/bootstrap.js'></script>
-        <!-- <script src="./js/min/bundle.js"></script> -->
-        <script src="./js/zscript.js"></script>
+        <script src="./js/zscript.js"></script> -->
+        <script src="./js/min/bundle.js"></script>
+        <script>
+            window.addEventListener("load", () => {
+                const introTimeline = gsap.timeline();
+                const heroTl = heroAnimation();
+                introTimeline.add(heroTl, "-=0.1");
+            });
+        </script>
 
 
     </body>
