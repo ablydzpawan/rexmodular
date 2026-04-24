@@ -23,15 +23,15 @@
   pointer-events: none;
 
   @include media-breakpoint-down(md) {
-    display: none;
+    //display: none;
   }
 }
 
 .preloader-mask {
   z-index: 100;
-  background-color: #1C1917;
-  mask: linear-gradient(white, white), url('https://ik.imagekit.io/kg2nszxjp/ironstride-preloader/preloader-mask.svg') center/40% no-repeat;
-  mask-composite: subtract;
+  // background-color: #1C1917;
+  //  mask: linear-gradient(white, white), url('https://ik.imagekit.io/kg2nszxjp/ironstride-preloader/preloader-mask.svg') center/80% no-repeat;
+  // mask-composite: subtract;
 }
 
 .preloader-progress-bar {
@@ -53,10 +53,12 @@
   height: 100%;
 
   p {
+
     margin: auto;
     text-align: center;
     mix-blend-mode: difference;
-    font-size: 4rem;
+    // font-size: 4rem;
+    font-size: clamp(1.5rem, calc(0.95rem + 2.125vw), 3.5rem);
     color: #fff;
     font-weight: 500;
     line-height: 100%;
