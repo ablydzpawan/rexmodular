@@ -1,0 +1,52 @@
+.section-intru {
+  position: relative;
+  padding-top: 6.5rem;
+
+  @include media-breakpoint-up(lg) {
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &-start {
+    position: relative;
+
+    @include media-breakpoint-down(md) {
+      padding: 0 1rem;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 0 2rem;
+    }
+  }
+
+  &-img {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.intru-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+
+  @include media-breakpoint-up(lg) {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    max-width: 620px;
+  }
+
+  @media (min-width: 768px) and (max-width: 1200px) {
+    padding: 0 2rem;
+  }
+}

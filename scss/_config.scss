@@ -1,0 +1,11 @@
+// Shared configuration — variables, functions and mixins only, no CSS
+// output. Imported at the top of every entry file so each compiled
+// stylesheet can use the same breakpoints and tokens.
+
+// Bootstrap configuration (for media-breakpoint-up() etc.)
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Project variables + mixins
+@import "themes/variables";

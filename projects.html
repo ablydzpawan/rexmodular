@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Projects | RexModular</title>
+        <link rel="icon" type="image/png" href="images/favicon/favicon.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <script>
+          // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
+          (function () {
+            var c = document.documentElement.classList;
+            if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            c.add("js");
+            try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) {}
+            // failsafe: show everything if the motion bundle never boots
+            setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
+          })();
+        </script>
+        <link rel="stylesheet" href="css/common.css" />
+        <link rel="stylesheet" href="css/work.css" />
+    </head>
+
+    <body>
+        <div class="app">
+            <header class="header header-light" id="header">
+                <div class="container">
+                    <div class="header-inner">
+                        <div class="logo">
+                            <a href="index.html" aria-label="RexModular home"><img class="logo-light" src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark" src="images/logos/logo-colored.svg" alt="RexModular"></a>
+                        </div>
+                        <nav class="main-nav" aria-label="Main navigation">
+                            <ul class="main-nav-list">
+                                <li class="main-nav-item"><a class="main-nav-link" href="about-us.html">About Us</a></li>
+                                <li class="main-nav-item has-dropdown">
+                                    <button class="main-nav-link main-nav-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"></path></svg></button>
+                                    <ul class="main-nav-dropdown">
+                                        <li><a class="main-nav-dropdown-link" href="market.html">Market</a></li>
+                                        <li><a class="main-nav-dropdown-link" href="services.html">Service</a></li>
+                                        <li><a class="main-nav-dropdown-link active" href="projects.html" aria-current="page">Projects</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                        <button class="menu-button" type="button" aria-label="Open menu" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                            <span class="button-icon">
+                                <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                    height="24" fill="currentColor">
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
+                                </svg>
+                            </span> <span class="button-txt">Menu</span> </button>
+                    </div>
+                </div>
+            </header>
+
+
+            <main class="main" id="main">
+                <section class="section section-intru section-intru-cover">
+                    <div class="section-intru-start">
+                        <div class="intru-text">
+                            <div class="section-text">
+                                <h1 class="section-text-h2 page-title">Large-Scale Development,<br><em>Rebuilt for Modular</em></h1>
+                                <span class="title-rule" aria-hidden="true"></span>
+                                <p class="section-text-desc">Rex Modular was founded by a team with extensive experience delivering complex high-rise, multifamily, and large-scale residential developments.</p>
+                                <p class="section-text-desc">Today, we are applying that experience to a new generation of modular construction—designed specifically for the realities of dense urban development.</p>
+                                <p class="section-text-desc">Our projects reflect both the experience behind Rex Modular and our vision for what high-rise modular construction can become.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-intru-img">
+                        <div class="reveal">
+                            <div class="image-wrap"><img src="images/projects/hero.jpg" alt="Aerial view of downtown Seattle and Elliott Bay" width="1600" height="1063" fetchpriority="high"></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section feature-row">
+                    <div class="feature-row-media" data-reveal-from="right">
+                        <div class="reveal">
+                            <div class="image-wrap"><img src="images/projects/3rd-and-battery.jpg" alt="Rendering of the 3rd &amp; Battery residential high-rise at dusk" width="1672" height="941" loading="lazy"></div>
+                        </div>
+                    </div>
+                    <div class="feature-row-body">
+                        <div class="section-text">
+                            <h2 class="section-text-h2">3rd &amp; Battery</h2>
+                            <p class="feature-lead">Seattle, Washington</p>
+                            <p class="section-text-desc">3rd &amp; Battery is a planned 17-story, 165-home residential high-rise in downtown Seattle and is being developed as a flagship application of the Rex Tower System.</p>
+                            <p class="section-text-desc">The project is designed to combine a five-story concrete podium with 12 stories of volumetric modular construction above, creating a hybrid building strategy tailored to the demands of high-density urban development.</p>
+                            <p class="section-text-desc">The concrete podium is planned to accommodate the building’s urban interface, parking, circulation, and core infrastructure, while the residential tower above will utilize a highly repeatable modular system. This approach is intended to capture the efficiencies of off-site manufacturing while maintaining the flexibility required for a complex downtown site.</p>
+                            <p class="section-text-desc">Architecture, structural engineering, MEP systems, manufacturing, logistics, and installation are being coordinated early in the design process to create an integrated path from design and factory production through delivery and on-site assembly.</p>
+                            <p class="section-text-desc">As the project advances, 3rd &amp; Battery is intended to demonstrate how the Rex Tower System can extend volumetric modular construction beyond conventional low- and mid-rise applications and into the high-rise environment.</p>
+                            <p class="section-text-desc">The project represents what Rex Modular is working to make possible: urban, high-density development delivered through a more integrated, predictable, and scalable approach to building.</p>
+                            <div><a class="btn btn-outline-brand" href="contact-us.html">Explore modular feasibility <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section feature-row feature-row-reverse">
+                    <div class="feature-row-media" data-reveal-from="left">
+                        <div class="reveal">
+                            <div class="image-wrap"><img src="images/projects/belmare-tower.jpg" alt="Residential tower facade with glass balconies" width="1600" height="2400" loading="lazy"></div>
+                        </div>
+                    </div>
+                    <div class="feature-row-body">
+                        <div class="section-text">
+                            <h2 class="section-text-h2">Belmare Tower</h2>
+                            <p class="feature-lead">Seattle, Washington</p>
+                            <p class="section-text-desc">Belmare Tower represents the high-rise development experience behind Rex Modular.</p>
+                            <p class="section-text-desc">Located in Seattle’s Belltown neighborhood, the 24-story residential tower is being developed in one of the city’s most prominent urban settings, with views toward Elliott Bay, the Olympic Mountains, and Olympic Sculpture Park.</p>
+                            <p class="section-text-desc">The project reflects the team’s experience navigating the full lifecycle of high-rise development—from site planning, design, entitlement, and consultant coordination to construction strategy, financing, and long term operations.</p>
+                            <p class="section-text-desc">While Belmare Tower is a conventionally constructed development rather than a modular project, experience delivering projects of this scale directly informs the thinking behind Rex Modular: understanding what developers, architects, engineers, contractors, lenders, and operators need to successfully execute complex urban buildings.</p>
+                            <p class="section-text-desc">That developer-first perspective is fundamental to how Rex Modular approaches the next generation of high-rise construction.</p>
+                            <div><a class="btn btn-outline-brand" href="contact-us.html">Explore modular feasibility <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section feature-row">
+                    <div class="feature-row-media" data-reveal-from="right">
+                        <div class="reveal">
+                            <div class="image-wrap"><img src="images/projects/rainier-landing.jpg" alt="Rendering of the Rainier Landing residential community beside the light rail" width="2560" height="1520" loading="lazy"></div>
+                        </div>
+                    </div>
+                    <div class="feature-row-body">
+                        <div class="section-text">
+                            <h2 class="section-text-h2">Rainier Landing</h2>
+                            <p class="feature-lead">SeaTac, Washington</p>
+                            <p class="section-text-desc">Rainier Landing demonstrates the large-scale multifamily development experience behind Rex Modular.</p>
+                            <p class="section-text-desc">Located in SeaTac’s Angle Lake District, this transit-oriented, master-planned community is transforming approximately six acres of former light-industrial property into a high-density residential destination near the Angle Lake Light Rail Station.</p>
+                            <p class="section-text-desc">The two-phase development is planned to deliver 726 residences, with 355 residences in Phase I, supported by landscaped outdoor spaces, resident amenities, convenient transit access, and views of Puget Sound and the surrounding mountains.</p>
+                            <p class="section-text-desc">Members of the team behind Rex Modular bring direct experience from Synergy Construction &amp; Development, which is involved in the development and delivery of Rainier Landing.</p>
+                            <p class="section-text-desc">That experience—from design coordination and entitlement through construction, operations, and long term ownership considerations—helps shape Rex Modular around the practical needs of developers delivering complex projects at scale.</p>
+                            <div><a class="btn btn-outline-brand" href="contact-us.html">Explore modular feasibility <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section cta-section">
+                    <div class="container">
+                        <div class="section-text cta-block">
+                            <h2 class="section-text-h2">Building What Comes Next</h2>
+                            <p class="feature-lead">The next generation of modular construction starts with the right project.</p>
+                            <p class="section-text-desc">Have a site, development opportunity, or project that could benefit from modular delivery? Bring it to us. We’ll help determine whether modular works, where it creates value, and what the Rex Tower System can make possible.</p>
+                            <div class="cta-actions">
+                                <a class="btn btn-outline-brand" href="contact-us.html">Bring Us a Site <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a>
+                                <a class="btn btn-outline-brand" href="contact-us.html">Contact Us <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer class="footer" id="footer" data-collection="footer">
+                <section class="section footer-top bg-blue">
+                    <div class="container">
+                        <div class="lets-connect">
+                            <div class="lets-connect-start section-text">
+                                <h2 class="section-text-h2">Let's get to work
+                                </h2>
+                                <p class="section-text-desc">Bring us a site.
+                                    We'll show you
+                                    what the Rex system delivers.
+                                </p>
+                                <div class="mt-4">
+                                    <a class="btn btn-white" href="contact-us.html">Contact Us <svg class="svg"
+                                        width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="currentColor">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z">
+                                            </path>
+                                        </svg> </a>
+                                </div>
+                            </div>
+                            <div class="lets-connect-end footer-logo">
+                                <img src="images/logos/footer-logo.svg" alt="" aria-hidden="true">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+                <section class="footer-bottom">
+                    <div class="container">
+                        <div class="footer-bottom-inner">
+                            <div class="footer-bottom-item">
+                                <p class="address">Bellevue, WA</p>
+                            </div>
+
+                            <div class="footer-bottom-item">
+                                <p class="copyright">© RexModular 2026. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+            <div class="back-top">
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="4" fill="none">
+                    </circle>
+                    <circle cx="25" cy="25" r="22" stroke="#fff" stroke-width="4" fill="none"
+                        stroke-dasharray="138.23007675795088" stroke-dashoffset="136.11792691661475"
+                        stroke-linecap="round"
+                        style="transition: stroke-dashoffset 0.3s; transform: rotate(-90deg); transform-origin: 50% 50%;">
+                    </circle>
+                </svg>
+                <svg class="up-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 20V4M12 4L6 10M12 4L18 10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample"
+            aria-label="Menu">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        <g id="Group_304" data-name="Group 304" transform="translate(-1801 -32)">
+                            <path id="Path_1285" data-name="Path 1285"
+                                d="M26,50A24,24,0,1,1,50,26,24,24,0,0,1,26,50Zm0-27.394-6.788-6.788-3.394,3.394L22.606,26l-6.788,6.788,3.394,3.394L26,29.394l6.788,6.788,3.394-3.394L29.394,26l6.788-6.788-3.394-3.394Z"
+                                transform="translate(1799 30)" fill="#fff" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li><a class="menu-link" href="index.html">Home</a></li>
+                    <li><a class="menu-link" href="about-us.html">About Us</a></li>
+                    <li class="menu-has-sub">
+                        <button class="menu-link menu-sub-toggle" type="button" aria-expanded="false">Our Work</button>
+                        <ul class="menu-sub">
+                            <li><a class="menu-sub-link" href="market.html">Market</a></li>
+                            <li><a class="menu-sub-link" href="services.html">Service</a></li>
+                            <li><a class="menu-sub-link" href="projects.html" aria-current="page">Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="menu-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
+                    <li><a class="menu-link" href="rex-vida.html">Rex Vida</a></li>
+                    <li><a class="menu-link" href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script defer src="js/min/common.bundle.js"></script>
+
+    </body>
+
+</html>

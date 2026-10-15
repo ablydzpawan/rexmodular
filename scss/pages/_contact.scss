@@ -1,40 +1,17 @@
+// contact-us.html: the form column
 .contact-us {
-    display: flex;
-    //align-items: center;
-    justify-content: center;
-    gap: 5rem;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
 
-    &-form {
-        @include media-breakpoint-up(lg) {
-            flex: 0 0 50%;
-            max-width: 50%;
-
-        }
+  &-form {
+    @include media-breakpoint-up(lg) {
+      flex: 0 0 50%;
+      max-width: 50%;
     }
+  }
 
-    &-data {
-        flex: 1;
-    }
-
-    &-block {
-        &+& {
-            margin-top: 4rem;
-        }
-    }
-
-    &-title {
-        font-size: 4rem;
-        font-weight: 500;
-        padding: 0;
-        margin: 0;
-        //line-height: 1;
-    }
-
-    &-dec {
-        font-size: 1.5rem;
-    }
-
-    .form-contact {
-        margin-top: 2rem;
-    }
+  .form-contact {
+    margin-top: 2rem;
+  }
 }

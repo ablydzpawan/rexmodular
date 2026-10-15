@@ -1,0 +1,88 @@
+// Supporting styles for the motion layer (js/motion.js, js/text-effects.js).
+// `html.js` is added by the inline <head> script only when motion is
+// allowed. The only CSS pre-hide is the hero copy, so it rises in instead
+// of flashing; everything below the fold gets its start state from GSAP
+// at setup time and so can't get stuck invisible if a script fails.
+.js {
+
+  .hero-content,
+  main>section:first-child .section-text {
+    visibility: hidden;
+  }
+
+  // the header items drop in first, as the page entrance begins (js/motion.js)
+  .header .logo,
+  .header .main-nav-item,
+  .header .menu-button,
+  .hero-video {
+    opacity: 0;
+  }
+
+  // hero images wait behind their wipe mask until the entrance reaches them
+  main>section:first-child .reveal img {
+    clip-path: inset(100% 0% 0% 0%);
+  }
+}
+
+// headings ("Fade Up Words") and paragraphs ("Line Reveal"): every word
+// sits in its own mask and rises out of it
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.15em;
+  margin-bottom: -0.15em;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+// letters animated one by one: the home hero headline ("Character Cascade",
+// inside the word's mask) and the eyebrow labels ("Blur In", no mask)
+.char {
+  display: inline-block;
+}
+
+// a blurred eyebrow word never breaks across lines between its letters
+.blur-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+// card hover touches (hover-capable pointers only, so they never stick on touch)
+.services .icon,
+.ecosystem-icon,
+.link-add {
+  transition: transform var(--dur-ui) var(--ease-out), border-color var(--dur-ui) var(--ease-out),
+    background-color var(--dur-ui) var(--ease-out);
+}
+
+@media (hover: hover) {
+  .services-item:hover .icon {
+    transform: translateY(-4px);
+  }
+
+  .ecosystem-item:hover .ecosystem-icon {
+    border-color: $brand-color;
+    background-color: #ECF5FE;
+    transform: translateY(-4px);
+  }
+
+  .link-add:hover {
+    transform: translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,125 @@
+.services {
+  background-color: #000;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1px;
+  margin: 0;
+
+  @include media-breakpoint-up(lg) {
+    margin: 2rem 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &-item {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 0rem;
+
+    @include media-breakpoint-up(lg) {
+      padding: 3rem 4rem;
+      flex-direction: row;
+
+      &:nth-child(odd) {
+        padding-left: 0;
+      }
+
+      &:nth-child(even) {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .icon {
+    @include media-breakpoint-down(md) {
+
+      .svg,
+      img {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+  }
+
+  &-data {
+    .h3 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #000;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      // justified only on wider screens: narrow phone columns get big word gaps
+      @include media-breakpoint-up(md) {
+        text-align: justify;
+      }
+
+      color: #000;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+  }
+
+  &-3 {
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .services-item {
+      flex-direction: column;
+      padding: 1rem 0;
+
+      @include media-breakpoint-up(lg) {
+        padding: 1.5rem 3rem;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .icon {
+
+      .svg,
+      img {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    li {
+      font-size: 0.95rem;
+      padding-left: 1.5rem;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        left: 5px;
+        top: 2px;
+        width: 6px;
+        height: 10px;
+        border: solid currentColor;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+}

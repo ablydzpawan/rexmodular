@@ -1,0 +1,14 @@
+// Design tokens as CSS custom properties — output once, in common.css.
+:root {
+  --bs-gutter-x: 1rem;
+  --bs-gutter-y: 1rem;
+  --brand-color: #1177DD;
+  --brand-color-alpha: 13, 128, 101;
+  --brand-color-inverse: rgb(255, 255, 255);
+
+  // motion timing (CSS transitions; GSAP timings live in js/motion.js)
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 200ms;
+  --dur-ui: 350ms;
+}

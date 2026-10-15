@@ -1,0 +1,284 @@
+// "Our Work" pages: market.html, services.html, projects.html
+
+$work-bg: #F7F9FC;
+$work-rule: #E3E8F0;
+
+// split hero (reuses .section-intru), with the image filling its half
+.section-intru-cover {
+  @include media-breakpoint-up(lg) {
+    height: 88vh;
+    min-height: 600px;
+
+    .section-intru-img {
+      position: relative;
+
+      .reveal,
+      .image-wrap {
+        height: 100%;
+      }
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .section-text-desc {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+}
+
+// balanced wrapping suits headings; paragraphs read better with "pretty"
+.section-intru-cover .section-text-desc,
+.feature-row-body .section-text-desc,
+.cta-block .section-text-desc {
+  text-wrap: pretty;
+}
+
+.page-title {
+  font-size: clamp(2rem, calc(1rem + 2.6vw), 4rem);
+  line-height: 1.12;
+
+  // the second line: same face, upright, light and in brand blue against the bold first line
+  em {
+    font-style: normal;
+    font-weight: 300;
+    color: $brand-color;
+  }
+}
+
+.title-rule {
+  display: block;
+  width: 3.5rem;
+  height: 2px;
+  margin: 1.5rem 0 2rem;
+  background-color: $brand-color;
+  transform-origin: left;
+}
+
+// in-page section nav (market page): sticks while reading, just below the
+// header whenever the header is showing (--header-visible-h, js/header-effects.js)
+.anchor-nav {
+  position: sticky;
+  top: var(--header-visible-h, 0px);
+  z-index: 50;
+  transition: top 0.75s ease;
+  background-color: #fff;
+  border-bottom: 1px solid $work-rule;
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    // on phones the tabs scroll sideways: fade the edges so it reads as scrollable
+    @include media-breakpoint-down(lg) {
+      mask-image: linear-gradient(to right, transparent 0, #000 1.5rem, #000 calc(100% - 2.5rem), transparent 100%);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 1.25rem 0;
+    white-space: nowrap;
+    font-weight: $font-weight-normal;
+    color: $txt-black;
+    position: relative;
+    transition: color var(--dur-ui) var(--ease-out);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      background-color: $brand-color;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--dur-ui) var(--ease-out);
+    }
+
+    &:hover,
+    &.active {
+      color: $brand-color;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &-num {
+    color: $brand-color;
+    font-size: 1.125rem;
+  }
+}
+
+// full-bleed image / copy rows
+.feature-row {
+  padding: 0;
+  display: grid;
+  scroll-margin-top: 4rem;
+
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 1fr 1fr;
+    min-height: 560px;
+  }
+
+  &-media {
+    position: relative;
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    // on desktop the image fills whatever height the copy needs
+    @include media-breakpoint-up(lg) {
+      .reveal {
+        height: 100%;
+      }
+
+      .image-wrap {
+        position: absolute;
+        inset: 0;
+      }
+
+      img {
+        height: 100%;
+        aspect-ratio: auto;
+      }
+    }
+  }
+
+  &-reverse &-media {
+    @include media-breakpoint-up(lg) {
+      order: 2;
+    }
+  }
+
+  &-body {
+    background-color: $work-bg;
+    display: flex;
+    align-items: center;
+    padding: 2.5rem 1.5rem 3rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 3.5rem 3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      padding: clamp(3rem, 6vw, 6rem) clamp(2rem, 5vw, 5.5rem);
+    }
+
+    .section-text {
+      max-width: 620px;
+    }
+
+    .section-text-h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    .section-text-desc {
+      text-align: left;
+      margin-bottom: 1.25rem;
+    }
+
+    .btn {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.feature-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: $brand-color;
+  font-size: 1.5rem;
+
+  &::after {
+    content: "";
+    width: 2rem;
+    height: 2px;
+    background-color: currentColor;
+  }
+}
+
+.feature-lead {
+  color: $brand-color;
+  font-weight: $font-weight-normal;
+  font-size: clamp(1rem, calc(0.9rem + 0.4vw), 1.25rem);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+}
+
+.feature-list-title {
+  font-size: 1.125rem;
+  font-weight: $font-weight-bold;
+  margin: 2rem 0 1rem;
+}
+
+.dash-list {
+  display: grid;
+  gap: 0.6rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include media-breakpoint-up(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7em;
+      width: 0.75rem;
+      height: 2px;
+      background-color: $brand-color;
+    }
+  }
+}
+
+// closing call to action
+.cta-block {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+
+  .section-text-desc {
+    text-align: center;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}

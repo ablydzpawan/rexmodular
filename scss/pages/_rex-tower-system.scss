@@ -1,0 +1,189 @@
+// our-rex-tower-system.html: hero banner, stats row, system slider, market blocks
+
+.hero-banner {
+  padding: 0;
+}
+
+.stats {
+  display: flex;
+  gap: 0rem;
+  flex-direction: column;
+
+  @include media-breakpoint-up(lg) {
+    gap: 6rem;
+    border-bottom: solid 1px #000;
+    flex-direction: row;
+  }
+
+  &-item {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+
+    &+& {
+      @include media-breakpoint-down(lg) {
+        border-top: solid 1px #000;
+      }
+
+      &:before {
+        @include media-breakpoint-up(lg) {
+          content: "";
+          border-top: solid 1px #000;
+          position: absolute;
+          left: -3rem;
+          height: 100%;
+          border-left: solid 1px #000;
+        }
+      }
+    }
+  }
+
+  &-key {
+    max-width: 300px;
+    text-wrap-style: balance;
+    font-size: clamp(1rem, calc(0.8rem + 1vw), 2rem);
+  }
+
+  &-value {
+    font-weight: 600;
+    font-size: clamp(1rem, calc(0.8rem + 2vw), 3.5rem);
+  }
+}
+
+.project-slider {
+  &-item {
+    background-color: #fff;
+  }
+
+  // the incoming slide settles from a slight zoom
+  &-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    img {
+      transform: scale(1.06);
+      transition: transform 1.2s var(--ease-out);
+    }
+  }
+
+  .swiper-slide-active &-img img {
+    transform: none;
+  }
+
+  &-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+    background-color: #606060;
+    border: none;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    aspect-ratio: 1/1;
+    padding: 10px;
+
+    @include media-breakpoint-up(lg) {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &:hover {
+      @include bg-brand;
+    }
+
+    .svg {
+      width: 100%;
+      height: auto;
+      fill: currentColor;
+    }
+  }
+
+  &-prev {
+    left: 0;
+
+    @include media-breakpoint-up(lg) {
+      left: 2.5rem;
+    }
+  }
+
+  &-next {
+    right: 0;
+
+    @include media-breakpoint-up(lg) {
+      right: 2.5rem;
+    }
+  }
+
+  .swiper-button-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.content-wrap {
+  .content-block {
+    padding: calc(1rem + 1.5vw) 0;
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: 2rem;
+
+    @include media-breakpoint-up(xl) {
+      flex-direction: row-reverse;
+      gap: 5rem;
+    }
+
+    h2 {
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    &-img {
+      overflow: hidden;
+
+      @include media-breakpoint-up(md) {
+        flex: 0 1 50%;
+      }
+
+      img {
+        object-fit: fill;
+      }
+    }
+
+    &-cms {
+      flex: 1;
+    }
+
+    &:nth-child(even) {
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+// justified only on wider screens: narrow phone columns get big word gaps
+.cms-about-us .section-text-desc {
+  @include media-breakpoint-up(md) {
+    text-align: justify;
+  }
+}

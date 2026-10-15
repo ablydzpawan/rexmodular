@@ -2,17 +2,10 @@
   position: relative;
   z-index: 1;
   background-color: #fff;
-  //padding: calc(1rem + 3.5vw) 0;
   padding: $section-padding 0;
 
-  //height: 100vh;
-  //min-height: 100svh;
   @include media-breakpoint-down(sm) {
     padding: calc(1rem + 3vw) 0;
-  }
-
-  &.py-0 {
-    padding-block: 0;
   }
 
   &-head {
@@ -24,8 +17,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    // flex-wrap: wrap;
-    // overflow: auto;
 
     @include media-breakpoint-up(lg) {
       gap: 2rem;
@@ -44,20 +35,9 @@
     &-align-center {
       @include media-breakpoint-up(lg) {
         align-items: center;
-
-      }
-    }
-
-    &-center {
-      justify-content: center;
-      text-align: center;
-
-      p {
-        margin: 0 auto;
       }
     }
   }
-
 
   .section-text {
     &-super {
@@ -72,18 +52,10 @@
     }
 
     &-h2 {
-      //font-size: 3.5rem;
-      //font-size: clamp(1.5rem, 2.105vw + 0.974rem, 3.5rem);
-      //font-size: clamp(1.375rem, 0.95rem + 2.125vw, 3.5rem);
       font-size: clamp(1.5rem, calc(0.95rem + 2.125vw), 3.5rem);
       margin-bottom: 1.2rem;
       font-weight: 600;
       text-wrap-style: balance;
-    }
-
-    &-h3 {
-      font-size: clamp(1.5rem, 3vw, 4.5rem);
-      margin-bottom: 1.2rem;
     }
 
     &-h4 {
@@ -104,12 +76,10 @@
       line-height: 1.6;
       text-wrap-style: balance;
       margin-bottom: 2rem;
-      text-align: justify;
+      //text-align: justify;
 
-      // font-weight: $font-weight-regular;
       @include media-breakpoint-up(lg) {
         font-size: clamp(1rem, 1.2rem, 2rem);
-
       }
     }
   }
@@ -125,17 +95,44 @@
   &-body {
     padding-top: calc(1rem + 0.5vw);
   }
-
-  &-action {
-    // overflow: auto;
-  }
-
-  &-foot {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
 }
 
 .bg-gray-lightest {
   background-color: #f2f2f2;
+}
+
+.bg-light-blue {
+  background-color: #ECF5FE;
+}
+
+.rex-icon {
+  padding: 2rem 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left;
+
+  @include media-breakpoint-up(lg) {
+    padding: 4rem 0;
+  }
+}
+
+.bg-possible {
+  position: relative;
+  color: #fff;
+
+  &:after {
+    content: "";
+    background-color: #012141;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    max-height: none;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    @include media-breakpoint-up(lg) {
+      max-height: 470px;
+    }
+  }
 }

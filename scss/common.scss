@@ -1,0 +1,31 @@
+// css/common.css — loaded on every page: tokens, element defaults, layout
+// (header, mobile menu, footer), components and the section patterns more
+// than one page uses. Page-only styles live in the page entries next to this.
+@import "config";
+
+// framework: only Bootstrap's .container is used
+@import "bootstrap/containers";
+
+// themes
+@import "themes/tokens";
+
+// base
+@import "components/base";
+@import "components/scrollbar";
+
+// layout
+@import "layout/header";
+@import "layout/offcanvas-menu";
+@import "layout/footer";
+
+// components
+@import "components/button";
+@import "components/section";
+@import "components/image";
+@import "components/services";
+@import "components/featured";
+@import "components/back-to-top";
+@import "components/motion";
+
+// shared split hero (about, contact, elliott bay, rex vida, our work pages)
+@import "pages/inner";

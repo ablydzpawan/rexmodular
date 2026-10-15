@@ -1,104 +1,128 @@
-$header-height: 116px;
+// Site header — eloqwnt.com motion (behavior in js/header-effects.js):
+// fixed bar, transparent over the hero, solid once the page scrolls
+// (.is-scrolled), slides out of view on scroll down and back in on
+// scroll up (.is-hidden) with a 0.75s ease.
+
+$header-height: 100px;
+$header-height-sm: 70px;
+$header-slide: transform 0.75s ease;
 
 .header {
-  background-color: transparent;
-  color: #fff;
-  position: absolute;
-  //height: 100px;
-  height: 100px;
-  z-index: 100;
-  width: 100%;
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
-  border: none;
-  opacity: 1;
+  z-index: 100;
   display: flex;
   align-items: center;
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  will-change: transition;
-  animation: fadein 2s ease forwards;
-  visibility: hidden;
-  animation-delay: 1.5s;
+  width: 100%;
+  height: $header-height;
+  color: #fff;
+  background-color: transparent;
+  transition: $header-slide, background-color 0.4s ease, color 0.4s ease;
 
   @include media-breakpoint-down(lg) {
-    height: 70px;
+    height: $header-height-sm;
   }
 
-  @keyframes fadein {
-    0% {
-      opacity: 0;
+  &.is-hidden {
+    transform: translateY(-100%);
+  }
+
+  // pages with a light hero use the colored logo, so the nav text goes dark
+  &-light,
+  &.is-scrolled {
+    color: $txt-black;
+
+    .logo .logo-light {
+      display: none;
     }
 
-    100% {
-      opacity: 1;
-      visibility: initial;
+    .logo .logo-dark {
+      display: block;
     }
   }
 
-  &-shadow {
-    &::after {
-      content: "";
-      background: transparent linear-gradient(180deg, #000000E6 0%, #54545400 100%) 0% 0% no-repeat padding-box;
-      position: absolute;
-      z-index: -2;
-      top: 0px;
-      left: 0px;
-      width: 100%;
-      height: 300px;
-      transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-      pointer-events: none;
+  &.is-scrolled {
+    background-color: #fff;
+
+    .menu-button {
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
     }
+  }
+
+  // dark wash behind the white nav on photo/video heroes
+  &-shadow::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(180deg, #000000E6 0%, #54545400 100%);
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  &-shadow.is-scrolled::after {
+    opacity: 0;
   }
 
   &-inner {
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: none;
-
-    // mix-blend-mode: difference;
-    @include media-breakpoint-up(lg) {}
+    width: 100%;
   }
 
   .logo {
     display: flex;
-    width: auto;
     max-width: 260px;
 
     @include media-breakpoint-down(md) {
       max-width: 200px;
     }
+
+    // zero specificity, so the light/scrolled states above always win
+    :where(.logo-dark) {
+      display: none;
+    }
+
+    // full-size tap target around the logo image
+    a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+    }
   }
 
   .menu-button {
-    background-color: #fff;
-    border: none;
-    border-radius: 50px;
     display: flex;
-    gap: 0.4rem;
     align-items: center;
     justify-content: center;
+    gap: 0.4rem;
     padding: 0.75rem 1.125rem;
+    border: none;
+    border-radius: 50px;
+    background-color: #fff;
     font-size: 1.5rem;
-    line-height: 1;
     font-weight: 600;
+    line-height: 1;
     text-transform: uppercase;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease;
 
     @include media-breakpoint-down(lg) {
-      aspect-ratio: 1/1;
+      flex-shrink: 0;
       width: 3rem;
       height: 3rem;
-      flex-shrink: 0;
+      aspect-ratio: 1/1;
     }
 
     .svg {
       width: 1.5rem;
       height: 1.5rem;
-    }
-
-    &:hover {
-      cursor: pointer;
     }
 
     .button-txt {
@@ -110,4 +134,159 @@ $header-height: 116px;
     }
   }
 
+  .main-nav {
+    display: none;
+    margin-inline-start: auto;
+
+    @include media-breakpoint-up(lg) {
+      display: block;
+
+      &+.menu-button {
+        display: none;
+      }
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+
+      @include media-breakpoint-down(xl) {
+        gap: 1.75rem;
+      }
+    }
+
+    &-item {
+      position: relative;
+    }
+
+    &-link {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.5rem 0;
+      overflow: hidden; // masks the sliding underline
+      border: none;
+      background: none;
+      color: inherit;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: $font-weight-normal;
+      line-height: 1.2;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+
+      // 1px underline: waits off to the left, slides in on hover, and
+      // leaves to the right (.is-leaving, set by header-effects.js)
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: currentColor;
+        transform: translateX(-101%);
+        transition: transform 0.45s ease;
+      }
+
+      &:hover::after,
+      &:focus-visible::after,
+      &.active::after {
+        transform: translateX(0);
+      }
+
+      &.is-leaving::after {
+        transform: translateX(101%);
+      }
+
+      &.no-transition::after {
+        transition: none;
+      }
+
+      .svg {
+        width: 1rem;
+        height: 1rem;
+        transition: transform 0.3s ease;
+      }
+    }
+
+    // dropdown toggles dim while their menu is open instead of underlining
+    .main-nav-toggle:not(.active)::after {
+      display: none;
+    }
+
+    &-dropdown {
+      position: absolute;
+      top: 100%;
+      left: -1rem;
+      min-width: 160px;
+      margin: 0.75rem 0 0;
+      padding: 0.375rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      background-color: rgba(28, 28, 28, 0.96);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px);
+      transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out), visibility 0.3s;
+
+      // hover bridge so the menu stays open while the pointer moves down to it
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 100%;
+        height: 0.75rem;
+      }
+
+      li+li {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      &-link {
+        display: block;
+        padding: 0.875rem 1rem;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 0.9375rem;
+        font-weight: $font-weight-normal;
+        transition: background-color 0.25s ease, padding 0.25s ease;
+
+        &:hover,
+        &:focus-visible {
+          padding-inline-start: 1.25rem;
+          background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        // current page
+        &.active {
+          background-color: rgba(255, 255, 255, 0.08);
+          box-shadow: inset 2px 0 0 $brand-color;
+        }
+      }
+    }
+
+    .has-dropdown:hover,
+    .has-dropdown:focus-within,
+    .has-dropdown.open {
+      .main-nav-toggle {
+        opacity: 0.5;
+
+        .svg {
+          transform: rotate(180deg);
+        }
+      }
+
+      .main-nav-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
 }

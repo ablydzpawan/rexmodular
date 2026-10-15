@@ -6,7 +6,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>RexModular</title>
-        <!-- FAVicon -->
         <link rel="icon" type="image/png" href="images/favicon/favicon.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
         <link rel="shortcut icon" href="images/favicon/favicon.ico" />
@@ -15,18 +14,45 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
-        <link rel="stylesheet" href="css/main-ltr.css" />
+        <script>
+          // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
+          (function () {
+            var c = document.documentElement.classList;
+            if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            c.add("js");
+            try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) {}
+            // failsafe: show everything if the motion bundle never boots
+            setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
+          })();
+        </script>
+        <link rel="stylesheet" href="css/common.css" />
     </head>
 
-    <body class="">
+    <body>
         <div class="app">
-            <header class="header" id="header">
+            <header class="header header-light" id="header">
                 <div class="container">
                     <div class="header-inner">
-                        <div class="logo" data-fade-in="down">
-                            <a href="index.html"> <img src="images/logos/logo-colored.svg" alt=""></a>
+                        <div class="logo">
+                            <a href="index.html" aria-label="RexModular home"><img class="logo-light" src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark" src="images/logos/logo-colored.svg" alt="RexModular"></a>
                         </div>
-                        <button class="menu-button" type="button" data-fade-in="down" data-bs-toggle="offcanvas"
+                        <nav class="main-nav" aria-label="Main navigation">
+                            <ul class="main-nav-list">
+                                <li class="main-nav-item"><a class="main-nav-link" href="about-us.html">About Us</a></li>
+                                <li class="main-nav-item has-dropdown">
+                                    <button class="main-nav-link main-nav-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"></path></svg></button>
+                                    <ul class="main-nav-dropdown">
+                                        <li><a class="main-nav-dropdown-link" href="market.html">Market</a></li>
+                                        <li><a class="main-nav-dropdown-link" href="services.html">Service</a></li>
+                                        <li><a class="main-nav-dropdown-link" href="projects.html">Projects</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                        <button class="menu-button" type="button" aria-label="Open menu" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                             <span class="button-icon">
                                 <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
@@ -38,24 +64,17 @@
                     </div>
                 </div>
             </header>
-            <!-- <div class="preloader-progress-bar">
-                <div class="preloader-bg"></div>
-                <div class="preloader-logo">
-                    <p class="logo-text" data-text-anim="logoAnimation">RexModular</p>
-                </div>
-            </div>
-            <div class="preloader-mask"></div> -->
 
             <main class="main" id="main">
                 <section class="section section-intru">
                     <div class="section-intru-start">
                         <div class="intru-text">
                             <div class="section-text">
-                                <sup class="sub-title section-text-super" data-text-anim="bodyAnimation">3031 Western
+                                <sup class="section-text-super">3031 Western
                                     Ave</sup>
-                                <h2 class="sub-title section-text-h2" data-text-anim="bodyAnimation">Elliott Bay Tower
+                                <h2 class="section-text-h2">Elliott Bay Tower
                                 </h2>
-                                <p class="sub-title section-text-desc" data-text-anim="bodyAnimation">Elliott Bay Tower
+                                <p class="section-text-desc">Elliott Bay Tower
                                     is RexModular's flagship development — a 13-story, 120-unit luxury multifamily
                                     building on Seattle's waterfront, steps from the Olympic Sculpture Park. The site at
                                     3031 Western
@@ -74,14 +93,14 @@
                     </div>
                     <div class="section-intru-img">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/ElliottBayTower1.avif" alt=""> </div>
+                            <div class="image-wrap"><img src="images/elliott-bay-tower/ElliottBayTower1.avif" alt=""> </div>
                         </div>
                     </div>
                 </section>
-                <section class="section ">
+                <section class="section">
                     <div class="container">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/Featured-Project01.avif" alt=""> </div>
+                            <div class="image-wrap"><img src="images/elliott-bay-tower/Featured-Project01.avif" alt=""> </div>
                         </div>
                     </div>
                 </section>
@@ -92,15 +111,15 @@
                     <div class="container">
                         <div class="lets-connect">
                             <div class="lets-connect-start section-text">
-                                <h2 class="sub-title section-text-h2" data-text-anim="bodyAnimation">Let's get to work
+                                <h2 class="section-text-h2">Let's get to work
                                 </h2>
-                                <p class="sub-title section-text-desc" data-text-anim="bodyAnimation">Bring us a site.
+                                <p class="section-text-desc">Bring us a site.
                                     We'll show you
                                     what the Rex system delivers.
                                 </p>
                                 <div class="mt-4">
                                     <a class="btn btn-white" href="contact-us.html">Contact Us <svg class="svg"
-                                            width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                        width="26" height="26" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24" fill="currentColor">
                                             <path fill="none" d="M0 0h24v24H0z"></path>
                                             <path
@@ -110,7 +129,7 @@
                                 </div>
                             </div>
                             <div class="lets-connect-end footer-logo">
-                                <img src="images/footer-logo.svg" alt="">
+                                <img src="images/logos/footer-logo.svg" alt="" aria-hidden="true">
                             </div>
 
                         </div>
@@ -150,10 +169,10 @@
         </div>
 
         <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample"
-            aria-labelledby="offcanvasExampleLabel">
+            aria-label="Menu">
             <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                    xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                         <g id="Group_304" data-name="Group 304" transform="translate(-1801 -32)">
                             <path id="Path_1285" data-name="Path 1285"
                                 d="M26,50A24,24,0,1,1,50,26,24,24,0,0,1,26,50Zm0-27.394-6.788-6.788-3.394,3.394L22.606,26l-6.788,6.788,3.394,3.394L26,29.394l6.788,6.788,3.394-3.394L29.394,26l6.788-6.788-3.394-3.394Z"
@@ -166,29 +185,22 @@
                 <ul class="menu">
                     <li><a class="menu-link" href="index.html">Home</a></li>
                     <li><a class="menu-link" href="about-us.html">About Us</a></li>
-                    <li><a class="menu-link" href="our-rex-tower-system.html">Our Rex Tower System</a></li>
-                    <li><a class="menu-link" href="elliott-bay-tower.html">Elliott Bay Tower</a></li>
+                    <li class="menu-has-sub">
+                        <button class="menu-link menu-sub-toggle" type="button" aria-expanded="false">Our Work</button>
+                        <ul class="menu-sub">
+                            <li><a class="menu-sub-link" href="market.html">Market</a></li>
+                            <li><a class="menu-sub-link" href="services.html">Service</a></li>
+                            <li><a class="menu-sub-link" href="projects.html">Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="menu-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
                     <li><a class="menu-link" href="rex-vida.html">Rex Vida</a></li>
                     <li><a class="menu-link" href="contact-us.html">Contact Us</a></li>
                 </ul>
             </div>
         </div>
 
-        <!-- <script src='./js/gsap.min.js'></script>
-        <script src='./js/ScrollTrigger.min.js'></script>
-        <script src='./js/lenis.min.js'></script>
-        <script src='./js/CustomEase.min.js'></script>
-        <script src='./js/SplitText.min.js'></script>
-        <script src='./js/bootstrap.js'></script>
-        <script src="./js/zscript.js"></script> -->
-        <script src="./js/min/bundle.js"></script>
-        <script>
-            window.addEventListener("load", () => {
-                const introTimeline = gsap.timeline();
-                const heroTl = heroAnimation();
-                introTimeline.add(heroTl, "-=0.1");
-            });
-        </script>
+        <script defer src="js/min/common.bundle.js"></script>
 
     </body>
 
