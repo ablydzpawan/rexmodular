@@ -51,6 +51,37 @@
   white-space: nowrap;
 }
 
+// service card titles ("Block Wipe"): the bar covers exactly the title's box
+.wipe {
+  position: relative;
+  display: inline-block;
+}
+
+.wipe-text {
+  display: inline-block;
+}
+
+.wipe-bar {
+  position: absolute;
+  inset: 0 -0.25rem;
+  background-color: $brand-color;
+  transform: scaleX(0);
+  pointer-events: none;
+}
+
+// service card copy ("Light Sweep"): a feathered diagonal mask, three times
+// the paragraph's width; sliding it from 100% to 0% (--sweep) moves its
+// edge across, from fully hidden to fully shown
+.sweep {
+  --sweep: 0%;
+  -webkit-mask-image: linear-gradient(115deg, #000 40%, transparent 60%);
+  mask-image: linear-gradient(115deg, #000 40%, transparent 60%);
+  -webkit-mask-size: 300% 100%;
+  mask-size: 300% 100%;
+  -webkit-mask-position: var(--sweep) 0;
+  mask-position: var(--sweep) 0;
+}
+
 // card hover touches (hover-capable pointers only, so they never stick on touch)
 .services .icon,
 .ecosystem-icon,

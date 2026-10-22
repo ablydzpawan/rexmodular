@@ -130,7 +130,7 @@
         var ctas = q(".btn");
         if (ctas.length) {
             tl.from(ctas, {
-                y: cascade ? 30 : 16, opacity: 0, scale: 0.9, duration: cascade ? 0.7 : 0.5, ease: "back.out(1.7)", stagger: 0.08,
+                y: cascade ? 30 : 16, opacity: 0, scale: 0.9, duration: cascade ? 0.7 : 0.5, ease: "back.out(1.7)", stagger: 0.08, clearProps: "transform",
             }, cascade ? "-=0.8" : "-=0.35");
         }
 
@@ -167,6 +167,7 @@
                 duration: 0.8,
                 ease: Rex.ease,
                 stagger: 0.08,
+                clearProps: "transform", // don't leave a stray inline translate behind
                 scrollTrigger: { trigger: block, start: "top 85%", toggleActions: REVERSE },
             });
         });
@@ -179,11 +180,28 @@
             Rex.revealImage(el, { scale: 1 });
         });
 
-        Rex.revealGroup(".services", ".services-data");
+        // service cards: a blue bar wipes the title in, then a light sweep uncovers its copy
+        gsap.utils.toArray(".services-data").forEach(function (card) {
+            var tl = gsap.timeline({
+                scrollTrigger: { trigger: card, start: "top 85%", toggleActions: REVERSE },
+            });
+            Rex.revealWipe(card.querySelector(".h3"), { timeline: tl });
+            card.querySelectorAll("p").forEach(function (p) {
+                Rex.revealSweep(p, { timeline: tl, position: "-=0.7" });
+            });
+        });
         Rex.revealGroup(".services", ".icon img, .icon .svg", iconPop);
         Rex.revealGroup(".ecosystem", ".ecosystem-item", { y: 50 });
         Rex.revealGroup(".ecosystem", ".ecosystem-icon img", iconPop);
-        Rex.revealGroup(".stats", ".stats-item");
+        // stat labels blur in letter by letter, one after another, as their counters run
+        gsap.utils.toArray(".stats").forEach(function (stats) {
+            var tl = gsap.timeline({
+                scrollTrigger: { trigger: stats, start: "top 85%", toggleActions: REVERSE },
+            });
+            stats.querySelectorAll(".stats-key").forEach(function (key, i) {
+                Rex.revealBlur(key, { timeline: tl, position: i * 0.2 });
+            });
+        });
         Rex.revealGroup(".form-contact", ".form-group", { y: 30 });
         Rex.revealGroup(".anchor-nav-list", "li", { y: 20, duration: 0.7, stagger: 0.05 });
         Rex.revealGroup(".lets-connect", ".footer-logo img", { y: 60 });

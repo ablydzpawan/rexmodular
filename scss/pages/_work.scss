@@ -280,5 +280,14 @@ $work-rule: #E3E8F0;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
+
+    // stacked, equal-width buttons on phones instead of a ragged centered wrap
+    @include media-breakpoint-down(sm) {
+      flex-direction: column;
+
+      .btn {
+        width: 100%;
+      }
+    }
   }
 }

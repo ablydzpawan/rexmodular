@@ -132,6 +132,53 @@
         return gsap.fromTo(chars, from, to);
     };
 
+    /* ---------- "Block Wipe" (card titles, .services-data .h3) ----------
+       A brand-blue bar sweeps in from the left to cover the title, then
+       pulls away to the right, leaving the title behind it as it slides
+       into place. Always part of a timeline (the caller owns the scroll
+       trigger); reversing it runs the wipe backwards. */
+    Rex.revealWipe = function (el, opts) {
+        if (!el) return null;
+        if (!el.dataset.wipeSplit) {
+            el.dataset.wipeSplit = "1";
+            el.innerHTML = '<span class="wipe"><span class="wipe-text">' + el.innerHTML +
+                '</span><span class="wipe-bar" aria-hidden="true"></span></span>';
+        }
+        var text = el.querySelector(".wipe-text");
+        var bar = el.querySelector(".wipe-bar");
+        opts = opts || {};
+
+        gsap.set(text, { autoAlpha: 0 });
+        var wipe = gsap.timeline({ defaults: { duration: 0.55, ease: "power4.inOut" } })
+            .fromTo(bar, { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1 })
+            .set(text, { autoAlpha: 1 })
+            .set(bar, { transformOrigin: "100% 50%" })
+            .to(bar, { scaleX: 0 })
+            .fromTo(text, { x: -14 }, { x: 0, duration: 0.8, ease: Rex.ease, clearProps: "transform" }, "<");
+        return opts.timeline.add(wipe, opts.position != null ? opts.position : 0);
+    };
+
+    /* ---------- "Light Sweep" (card copy, .services-data p) ----------
+       A feathered diagonal edge travels from top-left to bottom-right,
+       uncovering the paragraph as it rises a touch. The text is never
+       split (the mask moves, via --sweep), so it stays crisp throughout.
+       Always part of a timeline. */
+    Rex.revealSweep = function (el, opts) {
+        if (!el) return null;
+        el.classList.add("sweep");
+        opts = opts || {};
+        return opts.timeline.fromTo(el,
+            { "--sweep": "100%", y: 16 },
+            Object.assign({
+                "--sweep": "0%",
+                y: 0,
+                duration: 1.4,
+                ease: "power2.out",
+                clearProps: "transform",
+            }, opts.vars || {}),
+            opts.position != null ? opts.position : 0);
+    };
+
     // Line number of each word, from where it sits right now (so it's
     // always correct for the current width, measured when the reveal plays).
     function lineIndexes(words) {
