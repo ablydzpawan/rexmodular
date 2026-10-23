@@ -15,15 +15,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
         <script>
-          // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
-          (function () {
-            var c = document.documentElement.classList;
-            if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-            c.add("js");
-            try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) {}
-            // failsafe: show everything if the motion bundle never boots
-            setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
-          })();
+            // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
+            (function () {
+                var c = document.documentElement.classList;
+                if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+                c.add("js");
+                try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) { }
+                // failsafe: show everything if the motion bundle never boots
+                setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
+            })();
         </script>
         <link rel="stylesheet" href="css/common.css" />
         <link rel="stylesheet" href="css/work.css" />
@@ -35,22 +35,35 @@
                 <div class="container">
                     <div class="header-inner">
                         <div class="logo">
-                            <a href="index.html" aria-label="RexModular home"><img class="logo-light" src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark" src="images/logos/logo-colored.svg" alt="RexModular"></a>
+                            <a href="index.html" aria-label="RexModular home"><img class="logo-light"
+                                    src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark"
+                                    src="images/logos/logo-colored.svg" alt="RexModular"></a>
                         </div>
                         <nav class="main-nav" aria-label="Main navigation">
                             <ul class="main-nav-list">
-                                <li class="main-nav-item"><a class="main-nav-link" href="about-us.html">About Us</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="about-us.html">About Us</a>
+                                </li>
                                 <li class="main-nav-item has-dropdown">
-                                    <button class="main-nav-link main-nav-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"></path></svg></button>
+                                    <button class="main-nav-link main-nav-toggle active" type="button"
+                                        aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16"
+                                            height="16" fill="currentColor" aria-hidden="true">
+                                            <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z">
+                                            </path>
+                                        </svg></button>
                                     <ul class="main-nav-dropdown">
-                                        <li><a class="main-nav-dropdown-link active" href="market.html" aria-current="page">Market</a></li>
+                                        <li><a class="main-nav-dropdown-link active" href="market.html"
+                                                aria-current="page">Market</a></li>
                                         <li><a class="main-nav-dropdown-link" href="services.html">Service</a></li>
                                         <li><a class="main-nav-dropdown-link" href="projects.html">Projects</a></li>
                                     </ul>
                                 </li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a></li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex
+                                        Tower System</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a>
+                                </li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a>
+                                </li>
                             </ul>
                         </nav>
                         <button class="menu-button" type="button" aria-label="Open menu" data-bs-toggle="offcanvas"
@@ -72,33 +85,44 @@
                     <div class="section-intru-start">
                         <div class="intru-text">
                             <div class="section-text">
-                                <h1 class="section-text-h2 page-title">High-Rise Modular Solutions,<br><em>Specifically for Urban Developments</em></h1>
+                                <h1 class="section-text-h2 page-title">High-Rise Modular Solutions,<br><em>Specifically
+                                        for Urban Developments</em></h1>
                                 <span class="title-rule" aria-hidden="true"></span>
-                                <p class="section-text-desc">Multifamily and affordable housing. Senior and student living. Hotels and extended stays. One high-rise modular system.</p>
+                                <p class="section-text-desc">Multifamily and affordable housing. Senior and student
+                                    living. Hotels and extended stays. One high-rise modular system.</p>
                             </div>
                         </div>
                     </div>
                     <div class="section-intru-img">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/market/hero.jpg" alt="High-rise residential tower against a clear blue sky" width="1600" height="1067" fetchpriority="high"></div>
+                            <div class="image-wrap"><img src="images/market/hero.jpg"
+                                    alt="High-rise residential tower against a clear blue sky" width="1600"
+                                    height="1067" fetchpriority="high"></div>
                         </div>
                     </div>
                 </section>
                 <nav class="anchor-nav" aria-label="Markets">
                     <div class="container">
                         <ul class="anchor-nav-list">
-                            <li><a class="anchor-nav-link" href="#multifamily"><span class="anchor-nav-num">01</span> Multifamily</a></li>
-                            <li><a class="anchor-nav-link" href="#affordable"><span class="anchor-nav-num">02</span> Affordable</a></li>
-                            <li><a class="anchor-nav-link" href="#senior-living"><span class="anchor-nav-num">03</span> Senior Living</a></li>
-                            <li><a class="anchor-nav-link" href="#student-housing"><span class="anchor-nav-num">04</span> Student Housing</a></li>
-                            <li><a class="anchor-nav-link" href="#hospitality"><span class="anchor-nav-num">05</span> Hospitality</a></li>
+                            <li><a class="anchor-nav-link" href="#multifamily"><span class="anchor-nav-num">01</span>
+                                    Multifamily Housing</a></li>
+                            <li><a class="anchor-nav-link" href="#affordable"><span class="anchor-nav-num">02</span>
+                                    Affordable Housing</a></li>
+                            <li><a class="anchor-nav-link" href="#senior-living"><span class="anchor-nav-num">03</span>
+                                    Senior Living</a></li>
+                            <li><a class="anchor-nav-link" href="#student-housing"><span
+                                        class="anchor-nav-num">04</span> Student Housing</a></li>
+                            <li><a class="anchor-nav-link" href="#hospitality"><span class="anchor-nav-num">05</span>
+                                    Hospitality</a></li>
                         </ul>
                     </div>
                 </nav>
                 <section class="section feature-row" id="multifamily">
                     <div class="feature-row-media" data-reveal-from="right">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/market/multifamily.jpg" alt="Modern residential towers along a city waterfront" width="1600" height="1067" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/market/multifamily.jpg"
+                                    alt="Modern residential towers along a city waterfront" width="1600" height="1067"
+                                    loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
@@ -106,30 +130,43 @@
                             <span class="feature-num">01</span>
                             <h2 class="section-text-h2">Multifamily Housing</h2>
                             <p class="feature-lead">More space for more families––with less time and labor on-site.</p>
-                            <p class="section-text-desc">While foundations, podiums, and building cores take shape on-site, volumetric modules are built simultaneously in a controlled factory environment. This shortens the overall construction timeline while maintaining quality from one unit to the next.</p>
-                            <p class="section-text-desc">Flexible layouts and unit mixes also allow each development to respond to its site, market, and financial goals without sacrificing the efficiencies of modular construction.</p>
+                            <p class="section-text-desc">While foundations, podiums, and building cores take shape
+                                on-site, volumetric modules are built simultaneously in a controlled factory
+                                environment. This shortens the overall construction timeline while maintaining quality
+                                from one unit to the next.</p>
+                            <p class="section-text-desc">Flexible layouts and unit mixes also allow each development to
+                                respond to its site, market, and financial goals without sacrificing the efficiencies of
+                                modular construction.</p>
                         </div>
                     </div>
                 </section>
                 <section class="section feature-row feature-row-reverse" id="affordable">
                     <div class="feature-row-media" data-reveal-from="left">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/market/affordable.jpg" alt="Mid-rise apartment buildings in a dense neighborhood" width="1600" height="1067" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/market/affordable.jpg"
+                                    alt="Mid-rise apartment buildings in a dense neighborhood" width="1600"
+                                    height="1067" loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
                         <div class="section-text">
                             <span class="feature-num">02</span>
                             <h2 class="section-text-h2">Affordable Housing</h2>
-                            <p class="feature-lead">Housing for all––even when land, time, and resources are limited.</p>
-                            <p class="section-text-desc">High-rise modular construction makes it possible to add more homes on constrained urban sites while reducing weather delays and the amount of work required on-site. Planning the building around modular construction from the start also helps identify potential problems before they become expensive fixes.</p>
+                            <p class="feature-lead">Housing for all––even when land, time, and resources are limited.
+                            </p>
+                            <p class="section-text-desc">High-rise modular construction makes it possible to add more
+                                homes on constrained urban sites while reducing weather delays and the amount of work
+                                required on-site. Planning the building around modular construction from the start also
+                                helps identify potential problems before they become expensive fixes.</p>
                         </div>
                     </div>
                 </section>
                 <section class="section feature-row" id="senior-living">
                     <div class="feature-row-media" data-reveal-from="right">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/market/senior-living.jpg" alt="Two senior residents talking in a bright common room" width="1600" height="900" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/market/senior-living.jpg"
+                                    alt="Two senior residents talking in a bright common room" width="1600" height="900"
+                                    loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
@@ -137,30 +174,41 @@
                             <span class="feature-num">03</span>
                             <h2 class="section-text-h2">Senior Living</h2>
                             <p class="feature-lead">Meet rising demand with scalable modular senior housing.</p>
-                            <p class="section-text-desc">Bedrooms, bathrooms, kitchens, and essential building systems are constructed in a controlled factory environment to meet the needs of independent living, assisted living, memory care, and continuing care communities.</p>
-                            <p class="section-text-desc">High-rise modular construction also brings more senior housing to urban areas with access to essential services.</p>
+                            <p class="section-text-desc">Bedrooms, bathrooms, kitchens, and essential building systems
+                                are constructed in a controlled factory environment to meet the needs of independent
+                                living, assisted living, memory care, and continuing care communities.</p>
+                            <p class="section-text-desc">High-rise modular construction also brings more senior housing
+                                to urban areas with access to essential services.</p>
                         </div>
                     </div>
                 </section>
                 <section class="section feature-row feature-row-reverse" id="student-housing">
                     <div class="feature-row-media" data-reveal-from="left">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/market/student-housing.jpg" alt="Students walking out of a modern campus building" width="1600" height="955" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/market/student-housing.jpg"
+                                    alt="Students walking out of a modern campus building" width="1600" height="955"
+                                    loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
                         <div class="section-text">
                             <span class="feature-num">04</span>
                             <h2 class="section-text-h2">Student Housing</h2>
-                            <p class="feature-lead">Build the rooms while preparing the site––and stay ahead of the academic calendar.</p>
-                            <p class="section-text-desc">Residential units can be built in a factory while construction moves forward on-site––shortening the overall project timeline and reducing the risk of missing a leasing cycle. Repeated bedrooms, bathrooms, and shared spaces also make student housing the perfect fit for modular construction.</p>
+                            <p class="feature-lead">Build the rooms while preparing the site––and stay ahead of the
+                                academic calendar.</p>
+                            <p class="section-text-desc">Residential units can be built in a factory while construction
+                                moves forward on-site––shortening the overall project timeline and reducing the risk of
+                                missing a leasing cycle. Repeated bedrooms, bathrooms, and shared spaces also make
+                                student housing the perfect fit for modular construction.</p>
                         </div>
                     </div>
                 </section>
                 <section class="section feature-row" id="hospitality">
                     <div class="feature-row-media" data-reveal-from="right">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/market/hospitality.jpg" alt="Hotel facade with rows of balconies against a blue sky" width="1600" height="1067" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/market/hospitality.jpg"
+                                    alt="Hotel facade with rows of balconies against a blue sky" width="1600"
+                                    height="1067" loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
@@ -168,7 +216,10 @@
                             <span class="feature-num">05</span>
                             <h2 class="section-text-h2">Hospitality</h2>
                             <p class="feature-lead">Complete hotel rooms in the factory—and open sooner on-site.</p>
-                            <p class="section-text-desc">Hotel rooms often follow repeated layouts, making them a natural fit for modular construction. Rooms can arrive on-site with finishes and essential systems already installed to reduce the amount of work required at the property.</p>
+                            <p class="section-text-desc">Hotel rooms often follow repeated layouts, making them a
+                                natural fit for modular construction. Rooms can arrive on-site with finishes and
+                                essential systems already installed to reduce the amount of work required at the
+                                property.</p>
                         </div>
                     </div>
                 </section>
@@ -176,10 +227,25 @@
                     <div class="container">
                         <div class="section-text cta-block">
                             <h2 class="section-text-h2">Find the Right Modular Approach</h2>
-                            <p class="section-text-desc">See what modular construction could make possible for your project.</p>
+                            <p class="section-text-desc">See what modular construction could make possible for your
+                                project.</p>
                             <div class="cta-actions">
-                                <a class="btn btn-outline-brand" href="services.html">Explore Our Services <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a>
-                                <a class="btn btn-outline-brand" href="contact-us.html">Contact Us <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a>
+                                <a class="btn btn-outline-brand" href="services.html">Explore Our Services <svg
+                                        class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z">
+                                        </path>
+                                    </svg></a>
+                                <a class="btn btn-outline-brand" href="contact-us.html">Contact Us <svg class="svg"
+                                        width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="currentColor" aria-hidden="true">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z">
+                                        </path>
+                                    </svg></a>
                             </div>
                         </div>
                     </div>
@@ -198,7 +264,7 @@
                                 </p>
                                 <div class="mt-4">
                                     <a class="btn btn-white" href="contact-us.html">Contact Us <svg class="svg"
-                                        width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                            width="26" height="26" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24" fill="currentColor">
                                             <path fill="none" d="M0 0h24v24H0z"></path>
                                             <path
@@ -247,11 +313,10 @@
             </div>
         </div>
 
-        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample"
-            aria-label="Menu">
+        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample" aria-label="Menu">
             <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                         <g id="Group_304" data-name="Group 304" transform="translate(-1801 -32)">
                             <path id="Path_1285" data-name="Path 1285"
                                 d="M26,50A24,24,0,1,1,50,26,24,24,0,0,1,26,50Zm0-27.394-6.788-6.788-3.394,3.394L22.606,26l-6.788,6.788,3.394,3.394L26,29.394l6.788,6.788,3.394-3.394L29.394,26l6.788-6.788-3.394-3.394Z"
