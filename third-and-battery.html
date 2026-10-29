@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>RexModular</title>
+        <link rel="icon" type="image/png" href="images/favicon/favicon.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+        <script>
+            // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
+            (function () {
+                var c = document.documentElement.classList;
+                if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+                c.add("js");
+                try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) { }
+                // failsafe: show everything if the motion bundle never boots
+                setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
+            })();
+        </script>
+        <link rel="stylesheet" href="css/common.css" />
+    </head>
+
+    <body>
+        <div class="app">
+            <header class="header header-light" id="header">
+                <div class="container">
+                    <div class="header-inner">
+                        <div class="logo">
+                            <a href="index.html" aria-label="RexModular home"><img class="logo-light"
+                                    src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark"
+                                    src="images/logos/logo-colored.svg" alt="RexModular"></a>
+                        </div>
+                        <nav class="main-nav" aria-label="Main navigation">
+                            <ul class="main-nav-list">
+                                <li class="main-nav-item"><a class="main-nav-link" href="about-us.html">About Us</a>
+                                </li>
+                                <li class="main-nav-item has-dropdown">
+                                    <button class="main-nav-link main-nav-toggle active" type="button"
+                                        aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16"
+                                            height="16" fill="currentColor" aria-hidden="true">
+                                            <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z">
+                                            </path>
+                                        </svg></button>
+                                    <ul class="main-nav-dropdown">
+                                        <li><a class="main-nav-dropdown-link" href="market.html">Market</a></li>
+                                        <li><a class="main-nav-dropdown-link" href="services.html">Service</a></li>
+                                        <li><a class="main-nav-dropdown-link" href="projects.html">Projects</a></li>
+                                    </ul>
+                                </li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex
+                                        Tower System</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a>
+                                </li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <button class="menu-button" type="button" aria-label="Open menu" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                            <span class="button-icon">
+                                <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+                                    height="24" fill="currentColor">
+                                    <path fill="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path>
+                                </svg>
+                            </span> <span class="button-txt">Menu</span> </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main" id="main">
+                <section class="section section-intru">
+                    <div class="section-intru-start">
+                        <div class="intru-text">
+                            <div class="section-text">
+                                <sup class="section-text-super">Seattle, Washington </sup>
+                                <h2 class="section-text-h2"> 3rd & Battery
+                                </h2>
+                                <p class="section-text-desc"> 3rd & Battery is a planned 17-story, 165-home residential
+                                    high-rise in downtown Seattle and is being developed as a flagship application of
+                                    the Rex Tower System.
+
+                                    The project is designed to combine a five-story concrete podium with 12 stories of
+                                    volumetric modular construction above, creating a hybrid building strategy tailored
+                                    to the demands of high-density urban development.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-intru-img">
+                        <div class="reveal">
+                            <div class="image-wrap"><img src="images/3rd-and-battery/hero-3rd-battery.webp" alt="" width="960" height="1080" fetchpriority="high" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section">
+                    <div class="container">
+                        <div class="reveal">
+                            <div class="image-wrap"><img src="images/3rd-and-battery/body-battery.webp" alt="" width="1672" height="941"
+                                    loading="lazy" decoding="async">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+            <footer class="footer" id="footer" data-collection="footer">
+                <section class="section footer-top bg-blue">
+                    <div class="container">
+                        <div class="lets-connect">
+                            <div class="lets-connect-start section-text">
+                                <h2 class="section-text-h2">Let's get to work
+                                </h2>
+                                <p class="section-text-desc">Bring us a site.
+                                    We'll show you
+                                    what the Rex system delivers.
+                                </p>
+                                <div class="mt-4">
+                                    <a class="btn btn-white" href="contact-us.html">Contact Us <svg class="svg"
+                                            width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="currentColor">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path
+                                                d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z">
+                                            </path>
+                                        </svg> </a>
+                                </div>
+                            </div>
+                            <div class="lets-connect-end footer-logo">
+                                <img src="images/logos/footer-logo.svg" alt="" aria-hidden="true">
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+                <section class="footer-bottom">
+                    <div class="container">
+                        <div class="footer-bottom-inner">
+                            <div class="footer-bottom-item">
+                                <p class="address">Bellevue, WA</p>
+                            </div>
+
+                            <div class="footer-bottom-item">
+                                <p class="copyright">© RexModular 2026. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+            <div class="back-top">
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <circle cx="25" cy="25" r="22" stroke="rgba(255,255,255,0.15)" stroke-width="4" fill="none">
+                    </circle>
+                    <circle cx="25" cy="25" r="22" stroke="#fff" stroke-width="4" fill="none"
+                        stroke-dasharray="138.23007675795088" stroke-dashoffset="136.11792691661475"
+                        stroke-linecap="round"
+                        style="transition: stroke-dashoffset 0.3s; transform: rotate(-90deg); transform-origin: 50% 50%;">
+                    </circle>
+                </svg>
+                <svg class="up-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 20V4M12 4L6 10M12 4L18 10" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample" aria-label="Menu">
+            <div class="offcanvas-header">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        <g id="Group_304" data-name="Group 304" transform="translate(-1801 -32)">
+                            <path id="Path_1285" data-name="Path 1285"
+                                d="M26,50A24,24,0,1,1,50,26,24,24,0,0,1,26,50Zm0-27.394-6.788-6.788-3.394,3.394L22.606,26l-6.788,6.788,3.394,3.394L26,29.394l6.788,6.788,3.394-3.394L29.394,26l6.788-6.788-3.394-3.394Z"
+                                transform="translate(1799 30)" fill="#fff" />
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="menu">
+                    <li><a class="menu-link" href="index.html">Home</a></li>
+                    <li><a class="menu-link" href="about-us.html">About Us</a></li>
+                    <li class="menu-has-sub">
+                        <button class="menu-link menu-sub-toggle" type="button" aria-expanded="false">Our Work</button>
+                        <ul class="menu-sub">
+                            <li><a class="menu-sub-link" href="market.html">Market</a></li>
+                            <li><a class="menu-sub-link" href="services.html">Service</a></li>
+                            <li><a class="menu-sub-link" href="projects.html">Projects</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="menu-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
+                    <li><a class="menu-link" href="rex-vida.html">Rex Vida</a></li>
+                    <li><a class="menu-link" href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script defer src="js/min/common.bundle.js"></script>
+
+    </body>
+
+</html>

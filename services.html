@@ -15,15 +15,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
         <script>
-          // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
-          (function () {
-            var c = document.documentElement.classList;
-            if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-            c.add("js");
-            try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) {}
-            // failsafe: show everything if the motion bundle never boots
-            setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
-          })();
+            // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
+            (function () {
+                var c = document.documentElement.classList;
+                if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+                c.add("js");
+                try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) { }
+                // failsafe: show everything if the motion bundle never boots
+                setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
+            })();
         </script>
         <link rel="stylesheet" href="css/common.css" />
         <link rel="stylesheet" href="css/work.css" />
@@ -35,22 +35,35 @@
                 <div class="container">
                     <div class="header-inner">
                         <div class="logo">
-                            <a href="index.html" aria-label="RexModular home"><img class="logo-light" src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark" src="images/logos/logo-colored.svg" alt="RexModular"></a>
+                            <a href="index.html" aria-label="RexModular home"><img class="logo-light"
+                                    src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark"
+                                    src="images/logos/logo-colored.svg" alt="RexModular"></a>
                         </div>
                         <nav class="main-nav" aria-label="Main navigation">
                             <ul class="main-nav-list">
-                                <li class="main-nav-item"><a class="main-nav-link" href="about-us.html">About Us</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="about-us.html">About Us</a>
+                                </li>
                                 <li class="main-nav-item has-dropdown">
-                                    <button class="main-nav-link main-nav-toggle active" type="button" aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"></path></svg></button>
+                                    <button class="main-nav-link main-nav-toggle active" type="button"
+                                        aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16"
+                                            height="16" fill="currentColor" aria-hidden="true">
+                                            <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z">
+                                            </path>
+                                        </svg></button>
                                     <ul class="main-nav-dropdown">
                                         <li><a class="main-nav-dropdown-link" href="market.html">Market</a></li>
-                                        <li><a class="main-nav-dropdown-link active" href="services.html" aria-current="page">Service</a></li>
+                                        <li><a class="main-nav-dropdown-link active" href="services.html"
+                                                aria-current="page">Service</a></li>
                                         <li><a class="main-nav-dropdown-link" href="projects.html">Projects</a></li>
                                     </ul>
                                 </li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a></li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex
+                                        Tower System</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a>
+                                </li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a>
+                                </li>
                             </ul>
                         </nav>
                         <button class="menu-button" type="button" aria-label="Open menu" data-bs-toggle="offcanvas"
@@ -72,22 +85,28 @@
                     <div class="section-intru-start">
                         <div class="intru-text">
                             <div class="section-text">
-                                <h1 class="section-text-h2 page-title">Every Stage of Modular<br><em>Under One Roof</em></h1>
+                                <h1 class="section-text-h2 page-title">Every Stage of Modular<br><em>Under One Roof</em>
+                                </h1>
                                 <span class="title-rule" aria-hidden="true"></span>
-                                <p class="section-text-desc">One team coordinates every stage—from early feasibility and design to manufacturing, logistics, and final installation.</p>
+                                <p class="section-text-desc">One team coordinates every stage—from early feasibility and
+                                    design to manufacturing, logistics, and final installation.</p>
                             </div>
                         </div>
                     </div>
                     <div class="section-intru-img">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/services/hero.jpg" alt="Tower crane above a mid-rise building under construction" width="1600" height="1067" fetchpriority="high"></div>
+                            <div class="image-wrap"><img src="images/services/hero.webp"
+                                    alt="Tower crane above a mid-rise building under construction" width="1600"
+                                    height="1067" fetchpriority="high"></div>
                         </div>
                     </div>
                 </section>
                 <section class="section feature-row">
                     <div class="feature-row-media" data-reveal-from="right">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/services/feasibility.jpg" alt="Architects in hard hats reviewing blueprints together" width="1600" height="1067" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/services/feasibility.webp"
+                                    alt="Architects in hard hats reviewing blueprints together" width="1600"
+                                    height="1067" loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
@@ -95,8 +114,11 @@
                             <span class="feature-num">01</span>
                             <h2 class="section-text-h2">Feasibility Study</h2>
                             <p class="feature-lead">Can modular work for your project?</p>
-                            <p class="section-text-desc">Our feasibility study answers that question before you make major commitments.</p>
-                            <p class="section-text-desc">We evaluate the site, development program, design requirements, logistics, cost considerations, and schedule to determine whether high-rise modular construction is suitable for the opportunity.</p>
+                            <p class="section-text-desc">Our feasibility study answers that question before you make
+                                major commitments.</p>
+                            <p class="section-text-desc">We evaluate the site, development program, design requirements,
+                                logistics, cost considerations, and schedule to determine whether high-rise modular
+                                construction is suitable for the opportunity.</p>
                             <h3 class="feature-list-title">The Feasibility Process</h3>
                             <ul class="dash-list">
                                 <li>Zoning analysis</li>
@@ -117,7 +139,9 @@
                 <section class="section feature-row feature-row-reverse">
                     <div class="feature-row-media" data-reveal-from="left">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/services/design-development.jpg" alt="Architect reviewing building drawings across two monitors" width="1600" height="1067" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/services/design-development.webp"
+                                    alt="Design team reviewing building plans together on a laptop" width="1600"
+                                    height="1067" loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
@@ -125,8 +149,11 @@
                             <span class="feature-num">02</span>
                             <h2 class="section-text-h2">Design &amp; Development</h2>
                             <p class="feature-lead">Turning a feasible opportunity into a buildable project</p>
-                            <p class="section-text-desc">Once feasibility has been established, Rex Modular helps turn the opportunity into a coordinated, buildable project.</p>
-                            <p class="section-text-desc">We provide project integration and oversight throughout design and development, keeping the owner, consultant team, manufacturer, and general contractor aligned.</p>
+                            <p class="section-text-desc">Once feasibility has been established, Rex Modular helps turn
+                                the opportunity into a coordinated, buildable project.</p>
+                            <p class="section-text-desc">We provide project integration and oversight throughout design
+                                and development, keeping the owner, consultant team, manufacturer, and general
+                                contractor aligned.</p>
                             <h3 class="feature-list-title">Design &amp; Development Services</h3>
                             <ul class="dash-list">
                                 <li>Entitlement process oversight</li>
@@ -145,7 +172,9 @@
                 <section class="section feature-row">
                     <div class="feature-row-media" data-reveal-from="right">
                         <div class="reveal">
-                            <div class="image-wrap"><img src="images/services/installation.jpg" alt="Construction team in hard hats coordinating on site" width="1600" height="1067" loading="lazy"></div>
+                            <div class="image-wrap"><img src="images/services/installation.webp"
+                                    alt="Project team in hard hats reviewing floor plans on site" width="1600" height="1067"
+                                    loading="lazy"></div>
                         </div>
                     </div>
                     <div class="feature-row-body">
@@ -153,8 +182,11 @@
                             <span class="feature-num">03</span>
                             <h2 class="section-text-h2">Pre-Construction &amp; Installation</h2>
                             <p class="feature-lead">Preparing the building, site, and team for delivery</p>
-                            <p class="section-text-desc">A successful installation depends on the readiness of the building, the site, the modules, and every team involved.</p>
-                            <p class="section-text-desc">Rex Modular works with the owner, general contractor, manufacturer, and subcontractors to prepare for a coordinated factory-to-site delivery.</p>
+                            <p class="section-text-desc">A successful installation depends on the readiness of the
+                                building, the site, the modules, and every team involved.</p>
+                            <p class="section-text-desc">Rex Modular works with the owner, general contractor,
+                                manufacturer, and subcontractors to prepare for a coordinated factory-to-site delivery.
+                            </p>
                             <h3 class="feature-list-title">Pre-construction &amp; Installation Services</h3>
                             <ul class="dash-list">
                                 <li>Owner and general contractor coordination</li>
@@ -174,10 +206,25 @@
                     <div class="container">
                         <div class="section-text cta-block">
                             <h2 class="section-text-h2">Integration From the Outset</h2>
-                            <p class="section-text-desc">Rex Modular coordinates every phase of modular construction, from the initial site study through final module installation.</p>
+                            <p class="section-text-desc">Rex Modular coordinates every phase of modular construction,
+                                from the initial site study through final module installation.</p>
                             <div class="cta-actions">
-                                <a class="btn btn-outline-brand" href="contact-us.html">Start with a Feasibility Study <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a>
-                                <a class="btn btn-outline-brand" href="contact-us.html">Contact Us <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path fill="none" d="M0 0h24v24H0z"></path><path d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z"></path></svg></a>
+                                <a class="btn btn-outline-brand" href="contact-us.html">Start with a Feasibility Study
+                                    <svg class="svg" width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z">
+                                        </path>
+                                    </svg></a>
+                                <a class="btn btn-outline-brand" href="contact-us.html">Contact Us <svg class="svg"
+                                        width="26" height="26" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                                        fill="currentColor" aria-hidden="true">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path
+                                            d="M1.99974 13.0001L1.9996 11.0002L18.1715 11.0002L14.2218 7.05044L15.636 5.63623L22 12.0002L15.636 18.3642L14.2218 16.9499L18.1716 13.0002L1.99974 13.0001Z">
+                                        </path>
+                                    </svg></a>
                             </div>
                         </div>
                     </div>
@@ -196,7 +243,7 @@
                                 </p>
                                 <div class="mt-4">
                                     <a class="btn btn-white" href="contact-us.html">Contact Us <svg class="svg"
-                                        width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                            width="26" height="26" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24" fill="currentColor">
                                             <path fill="none" d="M0 0h24v24H0z"></path>
                                             <path
@@ -245,11 +292,10 @@
             </div>
         </div>
 
-        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample"
-            aria-label="Menu">
+        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample" aria-label="Menu">
             <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                         <g id="Group_304" data-name="Group 304" transform="translate(-1801 -32)">
                             <path id="Path_1285" data-name="Path 1285"
                                 d="M26,50A24,24,0,1,1,50,26,24,24,0,0,1,26,50Zm0-27.394-6.788-6.788-3.394,3.394L22.606,26l-6.788,6.788,3.394,3.394L26,29.394l6.788,6.788,3.394-3.394L29.394,26l6.788-6.788-3.394-3.394Z"
