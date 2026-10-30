@@ -15,15 +15,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
             rel="stylesheet">
         <script>
-          // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
-          (function () {
-            var c = document.documentElement.classList;
-            if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-            c.add("js");
-            try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) {}
-            // failsafe: show everything if the motion bundle never boots
-            setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
-          })();
+            // html.js turns the motion layer on (skipped for reduced motion); intro-seen skips the home preloader
+            (function () {
+                var c = document.documentElement.classList;
+                if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+                c.add("js");
+                try { if (sessionStorage.getItem("rex-intro-seen")) c.add("intro-seen"); } catch (e) { }
+                // failsafe: show everything if the motion bundle never boots
+                setTimeout(function () { if (!window.rexMotion) c.remove("js"); }, 4000);
+            })();
         </script>
         <link rel="stylesheet" href="css/common.css" />
     </head>
@@ -34,22 +34,34 @@
                 <div class="container">
                     <div class="header-inner">
                         <div class="logo">
-                            <a href="index.html" aria-label="RexModular home"><img class="logo-light" src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark" src="images/logos/logo-colored.svg" alt="RexModular"></a>
+                            <a href="index.html" aria-label="RexModular home"><img class="logo-light"
+                                    src="images/logos/logo.svg" alt="RexModular"><img class="logo-dark"
+                                    src="images/logos/logo-colored.svg" alt="RexModular"></a>
                         </div>
                         <nav class="main-nav" aria-label="Main navigation">
                             <ul class="main-nav-list">
-                                <li class="main-nav-item"><a class="main-nav-link active" href="about-us.html" aria-current="page">About Us</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link active" href="about-us.html"
+                                        aria-current="page">About Us</a></li>
                                 <li class="main-nav-item has-dropdown">
-                                    <button class="main-nav-link main-nav-toggle" type="button" aria-expanded="false" aria-haspopup="true">Our Work <svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z"></path></svg></button>
+                                    <button class="main-nav-link main-nav-toggle" type="button" aria-expanded="false"
+                                        aria-haspopup="true">Our Work <svg class="svg"
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16"
+                                            height="16" fill="currentColor" aria-hidden="true">
+                                            <path d="M12 13.172l4.95-4.95 1.414 1.414L12 16 5.636 9.636 7.05 8.222z">
+                                            </path>
+                                        </svg></button>
                                     <ul class="main-nav-dropdown">
                                         <li><a class="main-nav-dropdown-link" href="market.html">Market</a></li>
                                         <li><a class="main-nav-dropdown-link" href="services.html">Service</a></li>
                                         <li><a class="main-nav-dropdown-link" href="projects.html">Projects</a></li>
                                     </ul>
                                 </li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex Tower System</a></li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a></li>
-                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="our-rex-tower-system.html">Rex
+                                        Tower System</a></li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="rex-vida.html">Rex Vida</a>
+                                </li>
+                                <li class="main-nav-item"><a class="main-nav-link" href="contact-us.html">Contact Us</a>
+                                </li>
                             </ul>
                         </nav>
                         <button class="menu-button" type="button" aria-label="Open menu" data-bs-toggle="offcanvas"
@@ -79,9 +91,8 @@
                                 </h2>
                                 <p class="section-text-desc">RexModular was
                                     founded by a team that has spent careers delivering complex development and
-                                    construction projects — and who built this company to bring something new to the
-                                    industry: 14-story
-                                    volumetric modular buildings.</p>
+                                    construction projects - and we bring you 14-plus-story steel-frame volumetric
+                                    modular buildings to unlock site yield.</p>
                             </div>
                         </div>
                     </div>
@@ -99,10 +110,8 @@
                             <div class="section-head-start rex-icon"
                                 style="background-image: url(images/about-us/rex-icon-light.svg);">
                                 <div class="section-text">
-                                    <sup class="section-text-super"
-                                       >REXMODULAR</sup>
-                                    <h2 class="section-text-h2">Revolutionary
-                                        since 2025</h2>
+                                    <sup class="section-text-super">REXMODULAR</sup>
+                                    <h2 class="section-text-h2"> Revolutionizing Urban Housing</h2>
                                 </div>
                             </div>
                             <div class="section-head-end">
@@ -125,8 +134,8 @@
                                         engineered specifically
                                         for mid-rise multifamily delivery in the Pacific Northwest.
                                     </p>
-                                    <h6 class="section-text-h6"> We are a
-                                        systems developer, builder, and development partner — building the
+                                    <h6 class="section-text-h6">We are a development partner, a building partner, and a
+                                        modular housing provider — building the
                                         framework that makes better mid-rise housing possible.</h6>
                                 </div>
                             </div>
@@ -157,7 +166,8 @@
                         </header>
                         <div class="section-body">
                             <div class="about-video-wrpper">
-                                <img class="about-image" src="images/about-us/AboutUs02Diagram.webp" alt="" loading="lazy" decoding="async">
+                                <img class="about-image" src="images/about-us/AboutUs02Diagram.webp" alt=""
+                                    loading="lazy" decoding="async">
                             </div>
                         </div>
                     </div>
@@ -176,7 +186,7 @@
                                 </p>
                                 <div class="mt-4">
                                     <a class="btn btn-white" href="contact-us.html">Contact Us <svg class="svg"
-                                        width="26" height="26" xmlns="http://www.w3.org/2000/svg"
+                                            width="26" height="26" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24" fill="currentColor">
                                             <path fill="none" d="M0 0h24v24H0z"></path>
                                             <path
@@ -225,11 +235,10 @@
             </div>
         </div>
 
-        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample"
-            aria-label="Menu">
+        <div class="offcanvas offcanvas-menu" tabindex="-1" id="offcanvasExample" aria-label="Menu">
             <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><svg
-                    xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+                        xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
                         <g id="Group_304" data-name="Group 304" transform="translate(-1801 -32)">
                             <path id="Path_1285" data-name="Path 1285"
                                 d="M26,50A24,24,0,1,1,50,26,24,24,0,0,1,26,50Zm0-27.394-6.788-6.788-3.394,3.394L22.606,26l-6.788,6.788,3.394,3.394L26,29.394l6.788,6.788,3.394-3.394L29.394,26l6.788-6.788-3.394-3.394Z"

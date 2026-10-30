@@ -6,9 +6,9 @@
    applied site-wide by class:
 
    - headings          word fade-up            (text-effects.js)
-   - paragraphs        line-by-line reveal     (text-effects.js)
+   - paragraphs, leads line-by-line reveal     (text-effects.js)
    - eyebrows          letter blur-in          (text-effects.js)
-   - supporting copy   fade-up per text block  (leads, lists,
+   - supporting copy   fade-up per text block  (lists,
                        buttons)
    - images            clip-path wipe + settle
    - card groups       staggered rise
@@ -32,7 +32,7 @@
     var REVERSE = "play none none reverse";
 
     var HEADINGS = ".hero-content-heading, .page-title, .section-text-h2, .section-text-h4, .section-text-h6";
-    var SUPPORTING = ".rex-vida-logo, .feature-num, .title-rule, .feature-lead, " +
+    var SUPPORTING = ".rex-vida-logo, .feature-num, .title-rule, " +
         ".feature-list-title, .dash-list li, .btn, .app-actions";
     var TEXT_BLOCK = ".section-text, .cms, .section-head-end, .section";
     var HEADER_ITEMS = ".header .logo, .header .main-nav-item, .header .menu-button";
@@ -150,7 +150,7 @@
         var outsideHero = function (el) { return !hero || !hero.contains(el); };
 
         gsap.utils.toArray(HEADINGS).filter(outsideHero).forEach(function (el) { Rex.revealHeading(el); });
-        gsap.utils.toArray(".section-text-desc").filter(outsideHero).forEach(function (el) { Rex.revealParagraph(el); });
+        gsap.utils.toArray(".section-text-desc, .feature-lead").filter(outsideHero).forEach(function (el) { Rex.revealParagraph(el); });
         gsap.utils.toArray(".section-text-super").filter(outsideHero).forEach(function (el) { Rex.revealBlur(el); });
 
         // supporting copy rises in together with the text block it belongs to
